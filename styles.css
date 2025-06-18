@@ -1,3 +1,10 @@
+/* "TYPOGRAPHY" 
+h1 NAME OVERLAY:   40px/30px 400
+h4 SECTION-LEFT (About Madison) 30px/24 400
+p SECTION-RIGHT (text) 24px/ 400 */
+
+/*  */
+
 /* PART ONE. MAIN  */
 body {
 	margin: 0;
@@ -176,9 +183,12 @@ nav ul li a:hover::after {
 		max-height: 600px;
 		height: 600px;
 	}
+	.headshot {
+		padding-top: 0px;
+	}
 	.name-overlay {
 		bottom: 10%;
-		font-size: 32px;
+		font-size: 30px;
 	}
 }
 
@@ -186,27 +196,25 @@ nav ul li a:hover::after {
 .section {
 	display: flex;
 	flex-direction: row;
-}
-/* section-left (h3) 24px/400 weight - desktop */
-.section-left {
 	margin: 0;
 	padding: 0;
 	padding-top: 5%;
+	padding-bottom: 5%;
+}
+/* section-left (h3) 24px/400 weight - desktop */
+.section-left {
 	padding-left: 10%;
 	width: 40%;
-	font-size: 24px;
+	font-size: 30px;
 	font-weight: 400;
 	text-align: center;
 	/* background-color: yellow; */
 }
 
 .section-right {
-	margin: 0;
-	padding: 0;
-	padding-top: 5%;
 	padding-right: 10%;
 	width: 60%;
-	font-size: 18px;
+	font-size: 24px;
 	font-weight: 400;
 	line-height: 1.4;
 	/* background-color: aqua; */
@@ -215,13 +223,12 @@ nav ul li a:hover::after {
 	.section {
 		flex-direction: column;
 	}
-	/* section-left (h3) 24px/400 weight - desktop */
-	/* section-left (h3) 18px/400 weight - mobile */
+
 	.section-left {
 		padding: 0;
 		padding-top: 5%;
 		width: 100%;
-		font-size: 18px;
+		font-size: 24px;
 	}
 
 	.section-right {
@@ -232,17 +239,41 @@ nav ul li a:hover::after {
 		margin-left: 5%;
 		width: 90%;
 		margin-right: 5%;
-		font-size: 14px;
+		font-size: 18px;
 	}
 }
-
-/* h3 {
-	font-size: 24px;
-	font-weight: 400;
+/* PART SIX BUTTON */
+.read-more-button {
+	display: inline-block;
+	margin-top: 1rem;
+	padding: 0.75rem 2rem;
+	background-color: #333;
+	color: white;
+	text-decoration: none;
+	font-size: 14px;
+	border-radius: 4px;
+	transition: background-color 0.3s ease;
 }
-p {
-	font-size: 18px;
-	font-weight: 300;
-	line-height: 1.6;
-	margin: 0 0 20px 0;
-} */
+
+.read-more-button:hover {
+	background-color: #555;
+}
+
+/* Footer */
+.site-footer {
+	background-color: #f7f7f7;
+	color: #333;
+	text-align: center;
+	padding: 1rem 1rem;
+	font-size: 14px;
+}
+
+.site-footer a {
+	color: inherit;
+	text-decoration: none;
+	margin: 0 0.5rem;
+}
+
+.site-footer a:hover {
+	text-decoration: underline;
+}
