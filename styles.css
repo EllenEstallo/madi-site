@@ -5,6 +5,7 @@ body {
 	background-color: #1a1a1a;
 	font-family: "Montserrat", sans-serif;
 	color: #333;
+	overflow-x: hidden;
 }
 
 .content-container {
@@ -160,13 +161,13 @@ nav ul li a:hover::after {
 
 	display: block;
 }
-
+/* NAME OVERLAY (h1) 40px/400 weight */
 .name-overlay {
 	position: absolute;
 	bottom: 8%;
 	width: 100%;
 	color: white;
-	font-weight: 200;
+	font-weight: 400;
 	font-size: 40px;
 	text-align: center;
 }
@@ -183,48 +184,59 @@ nav ul li a:hover::after {
 
 /* PART FIVE - full-width section */
 .section {
-	margin: 0;
-	padding: 0;
-
 	display: flex;
 	flex-direction: row;
 }
-
+/* section-left (h3) 24px/400 weight - desktop */
 .section-left {
 	margin: 0;
 	padding: 0;
+	padding-top: 5%;
+	padding-left: 10%;
 	width: 40%;
+	font-size: 24px;
+	font-weight: 400;
 	text-align: center;
+	/* background-color: yellow; */
 }
 
 .section-right {
 	margin: 0;
 	padding: 0;
+	padding-top: 5%;
+	padding-right: 10%;
 	width: 60%;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.4;
+	/* background-color: aqua; */
 }
 @media (max-width: 768px) {
 	.section {
-		margin: 0;
-		padding: 0;
-		display: flex;
 		flex-direction: column;
 	}
+	/* section-left (h3) 24px/400 weight - desktop */
+	/* section-left (h3) 18px/400 weight - mobile */
 	.section-left {
-		height: 100px;
-		width: 100%;
-		margin: 0;
 		padding: 0;
-		text-align: center;
+		padding-top: 5%;
+		width: 100%;
+		font-size: 18px;
 	}
+
 	.section-right {
-		margin: 0;
 		padding: 0;
-		height: 100px;
-		width: 100%;
+		padding-top: 5%;
+
+		margin: 0;
+		margin-left: 5%;
+		width: 90%;
+		margin-right: 5%;
+		font-size: 14px;
 	}
 }
 
-h3 {
+/* h3 {
 	font-size: 24px;
 	font-weight: 400;
 }
@@ -233,4 +245,4 @@ p {
 	font-weight: 300;
 	line-height: 1.6;
 	margin: 0 0 20px 0;
-}
+} */
