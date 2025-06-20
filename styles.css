@@ -250,16 +250,29 @@ button, .nav-link {
 	display: block;
 }
 /* NAME OVERLAY (h1) 40px/400 weight */
-.name-overlay,
-.about-name-overlay {
+
+.name-overlay {
 	position: absolute;
-	bottom: 8%;
-	width: 100%;
-	color: white;
-	font-weight: 400;
-	font-size: 40px;
+	bottom: 10%;
+	left: 50%;
+	transform: translateX(-50%);
 	text-align: center;
-}
+	color: white;
+    }
+    
+    .name-overlay h1 {
+	font-size: clamp(2rem, 5vw, 3rem);
+	font-weight: 700;
+	margin: 0;
+    }
+    
+    .name-overlay h2 {
+	font-size: clamp(1.25rem, 3vw, 2rem);
+	font-weight: 400;
+	margin: 0;
+    }
+    
+
 @media (max-width: 768px) {
 	.photo-background {
 		max-height: 600px;
