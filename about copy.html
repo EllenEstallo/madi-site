@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>About - Madison Hammel</title>
+
+		<!-- Import Montserrat font -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap"
+			rel="stylesheet"
+		/>
+
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: #1a1a1a;
+				font-family: "Montserrat", sans-serif;
+			}
+
+			body {
+				color: #333;
+			}
+
+			.content-container {
+				max-width: 1440px;
+				/* width: 100%; */
+				margin: 0 auto;
+				background-color: white;
+				min-height: 100vh;
+				box-sizing: border-box;
+				/* padding: 0; */
+			}
+
+			nav {
+				background: white;
+				padding: 20px 0 20px 0;
+				position: relative;
+			}
+
+			nav ul {
+				list-style: none;
+				display: flex;
+				justify-content: center;
+				gap: 40px;
+				margin: 0;
+				padding: 0;
+			}
+
+			nav ul li a {
+				font-weight: 400;
+				font-size: 14px;
+				text-decoration: none;
+				text-transform: uppercase;
+				color: #333;
+				position: relative;
+				padding: 5px 0;
+				transition: color 0.3s ease;
+			}
+
+			nav ul li a::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				/* right: 0; */
+				bottom: 0;
+				height: 1.5px;
+				width: 0;
+				background: #333;
+				transform: scaleX(0);
+				transition: transform 0.3s ease;
+				/* transform-origin: left; */
+			}
+
+			nav ul li a:hover::after {
+				/* transform: scaleX(1); */
+				width: 100%;
+			}
+
+			.hamburger {
+				display: none;
+				cursor: pointer;
+				position: fixed;
+				top: 24px;
+				left: 20px;
+				width: 30px;
+				height: 2px;
+				z-index: 1001;
+			}
+
+			.hamburger span {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background: #333;
+				border-radius: 2px;
+				transition: transform 0.4s ease;
+				transform-origin: center center;
+			}
+
+			.hamburger.active span:nth-child(1) {
+				transform: rotate(30deg);
+			}
+
+			.hamburger.active span:nth-child(2) {
+				transform: rotate(-30deg);
+			}
+
+			.mobile-nav {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 80%;
+				height: 100%;
+				background: white;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				transform: translateX(-100%);
+				transition: transform 0.4s ease;
+				z-index: 1000;
+				box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+			}
+
+			.mobile-nav.active {
+				transform: translateX(0);
+			}
+
+			.mobile-nav a {
+				font-weight: 400;
+				font-size: 14px;
+				text-decoration: none;
+				text-transform: uppercase;
+				color: #333;
+				padding: 20px 0;
+				width: 100%;
+				text-align: center;
+				border-bottom: 1px solid #eee;
+				transition: background 0.2s;
+			}
+
+			.mobile-nav a:hover {
+				background: #f5f5f5;
+			}
+
+			@media (max-width: 768px) {
+				nav ul {
+					display: none;
+				}
+				.hamburger {
+					display: block;
+				}
+			}
+
+			.about-header {
+				text-align: center;
+				padding: 80px 20px 40px;
+				font-size: 40px;
+				font-weight: 200;
+				color: #111;
+			}
+
+			.about-text {
+				max-width: 1000px;
+				margin: 0 auto;
+				padding: 0 clamp(20px, 5vw, 60px) 80px;
+				font-weight: 300;
+				font-size: 18px;
+				color: #333;
+				line-height: 1.6;
+				/* text-align: left; */
+				/* white-space: pre-line; */
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="centered-container">
+			<nav>
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="#media">MEDIA</a></li>
+					<li><a href="#engagements">ENGAGEMENTS</a></li>
+					<li><a href="#repertoire">REPERTOIRE</a></li>
+					<li><a href="#contact">CONTACT</a></li>
+				</ul>
+
+				<div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+					<span></span>
+					<span></span>
+				</div>
+
+				<div class="mobile-nav" id="mobileNav">
+					<a href="index.html">HOME</a>
+					<a href="about.html">ABOUT</a>
+					<a href="#media">MEDIA</a>
+					<a href="#engagements">ENGAGEMENTS</a>
+					<a href="#repertoire">REPERTOIRE</a>
+					<a href="#contact">CONTACT</a>
+				</div>
+			</nav>
+
+			<div class="about-header">About Madison</div>
+
+			<div class="about-text">
+				Madison Renee Hammel, Soprano, is a 2024 graduate of Oberlin College and
+				Conservatory, earning her Bachelor of Music (Vocal Performance, studying
+				under Professor Kendra Colton) and Bachelor of Arts in Psychology. She
+				performed with the Oberlin Chamber Singers and most recently sang the
+				roles of Eurydice & La Musica in Monteverdi’s L’Orfeo and Ms. Wordsworth
+				in Britten’s Albert Herring with the Oberlin Opera Theater. <br />
+				<br />
+				Madison currently serves with the ArtistYear program as an Americorp
+				Resident Teaching Fellow at C.C.A. Baldi Middle School, where she
+				supports the teaching of their Theater and Music classes and recently
+				assisted in putting on the school’s first Musical Theater production,
+				Moana Jr. <br />
+				<br />
+				Madison has performed in several international choral
+				festivals,including Alta Pusteria International Choral Festival, Idaho
+				International Choral Festival, and the Montana International Choral
+				Festival. She has additionally performed at Carnegie Hall, Thomaskirche
+				in Leipzig, Germany, Tanglewood as part of the Tanglewood Institute’s
+				Young Artist Vocal Program, the Kimmel Center as part of the Harmony for
+				Peace Foundation’s International Peace Day concerts, and the Academy of
+				Music as part of the Pennsylvania Ballet’s performance of Carmina
+				Burana. <br />
+				<br />
+				Madison grew up in Haddonfield, New Jersey where she graduated with
+				honors from Haddonfield Memorial High School. She studied voice and
+				piano under Ms. Kristine Biller, and was a long-standing member of
+				Childrensong of New Jersey under the artistic direction of founder Ms.
+				Polly Murray. Madison additionally studied under Ms. Jeanai La Vita
+				while attending Manhattan School of Music’s pre-college program. <br />
+				<br />
+				Madison serves as a Cantor for several parishes in the greater
+				Philadelphia area, including Christ the King Catholic Church in
+				Haddonfield, NJ,James the Lesser Church in Jamesburg, NJ, and Queenship
+				of Mary in Plainsboro, NJ. She continues to be an avid tennis player, as
+				well as a dedicated home baker.
+			</div>
+		</div>
+
+		<script>
+			function toggleMobileNav() {
+				const hamburger = document.getElementById("hamburger");
+				const mobileNav = document.getElementById("mobileNav");
+				hamburger.classList.toggle("active");
+				mobileNav.classList.toggle("active");
+			}
+		</script>
+	</body>
+</html>
