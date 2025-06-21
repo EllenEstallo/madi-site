@@ -160,6 +160,7 @@ h1 {
 	margin: 0 auto;
 	min-height: 100vh;
 	box-sizing: border-box;
+	/* padding: 0 1rem; */
 	/* padding: 2rem 1rem; */
 	/* optional inner spacing */
 }
@@ -204,12 +205,25 @@ h1 {
 	justify-content: center;
 	z-index: 1000;
 }
+
+.desktop-nav-inner {
+	width: 100%;
+	max-width: 1440px;
+	background-color: rgba(0, 0, 0, 0.2);
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
 .desktop-nav ul {
 	display: flex;
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	gap: 2rem;
+	gap: 3rem;
+	justify-content: center;
 }
 .desktop-nav li a {
 	color: white;
@@ -341,9 +355,9 @@ h1 {
 	.mobile-nav-bar {
 		display: flex;
 	}
-	.mobile-nav {
+	/* .mobile-nav {
 		display: block;
-	}
+	} */
 }
 
 @media (min-width: 769px) {
@@ -375,40 +389,48 @@ h1 {
 
 .mobile-nav {
 	position: fixed;
-	top: 0px; /* below the black bar */
+	top: 0;
 	left: 0;
-
 	width: 100vw;
 	height: 100vh;
-	/* background-color: rgba(0, 0, 0, 0.9);  */
-	/* background-color: transparent; */
-	padding: 5rem 1.5rem 2rem;
-
-	transform: translateX(-100%);
-	transition: transform 0.4s ease, backdrop-filter 0.4s ease;
-
-	z-index: 998;
-	/* display: flex; */
-	display: none;
 	flex-direction: column;
+	padding: 5rem 1.5rem 2rem;
 	justify-content: flex-start;
 	align-items: flex-start;
+	z-index: 998;
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	/* background-color: rgba(0, 0, 0, 0.5); */
 
-	backdrop-filter: blur(12px);
-	background-color: rgba(0, 0, 0, 0.5); /* adds subtle dark tint behind blur */
-	-webkit-backdrop-filter: blur(12px); /* for Safari */
-
-	/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+	/* Initial off-screen & transparent state */
+	transform: translateX(-100%);
+	opacity: 0;
+	pointer-events: none;
+	transition: transform 1s ease, opacity 1s ease;
 }
+
 .mobile-nav.open {
-	transform: translateX(0); /* Slide in from left */
-	display: flex;
+	transform: translateX(0);
+	opacity: 1;
+	pointer-events: auto;
 }
 
 .mobile-nav ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+}
+/* Initial state: hidden */
+.mobile-nav-links {
+	opacity: 0;
+	/* transform: translateY(20px); */
+	transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+}
+
+/* When menu is open: fade and slide in */
+.mobile-nav.open .mobile-nav-links {
+	opacity: 1;
+	transform: translateY(0);
 }
 
 .mobile-nav li {
@@ -453,7 +475,7 @@ h1 {
 /* HERO IMAGE */
 .hero-image {
 	width: 100%;
-	height: 100vh; /* Adjust based on how tall you want it */
+	height: 100vh;
 	background-image: url("./ASSETS/homepage-iStock-467434437.jpg");
 	background-size: cover;
 	background-position: center center;
@@ -461,11 +483,19 @@ h1 {
 	background-color: black; /* fallback if image doesn't load */
 	position: relative;
 }
+.footer-hover-zone {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40px; /* height of the hover strip */
+	z-index: 10;
+}
 
 /* Optional: Responsive height tweaks */
 @media (max-width: 768px) {
 	.hero-image {
-		height: 50vh;
+		height: 100vh;
 	}
 }
 
@@ -589,16 +619,48 @@ h1 {
 	opacity: 1;
 	transform: translateY(0);
 }
-.site-footer {
-	text-align: center;
-	font-size: 0.875rem;
-	color: #999;
-	padding: 1rem 0;
-	opacity: 0; /* start hidden */
-	animation: footerFade 1s ease-out 2.5s forwards;
-	/* ↑ 1 s fade, begins 2.5 s after load; tweak delay as desired */
+.hero-image {
+	position: relative;
+	height: 100vh;
+	background: url("ASSETS/homepage-iStock-467434437.jpg") center/cover no-repeat;
 }
 
+/* Hover trigger area */
+.footer-hover-zone {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40px; /* height of the hover strip */
+	z-index: 10;
+}
+
+/* Footer hidden by default */
+.site-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 0.875rem;
+	color: rgba(255, 253, 252, 0.519);
+	padding: 1rem 0;
+	background-color: rgba(0, 0, 0, 0.2);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.4s ease;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Show footer on hover of the hover strip */
+.footer-hover-zone:hover .site-footer {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.hero-image:hover .site-footer {
+	opacity: 1;
+}
 @keyframes footerFade {
 	to {
 		opacity: 1;
