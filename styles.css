@@ -358,7 +358,7 @@ h1 {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 64px;
+	/* height: 64px; */
 	/* background-color: black; */
 	background-color: transparent;
 	display: flex;
@@ -375,24 +375,29 @@ h1 {
 
 .mobile-nav {
 	position: fixed;
-	top: 64px; /* below the black bar */
+	top: 0px; /* below the black bar */
 	left: 0;
 
-	width: 80%;
-	max-width: 300px;
+	width: 100vw;
 	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.9); /* semi-transparent black */
-	padding: 4rem 1.5rem 1.5rem;
+	/* background-color: rgba(0, 0, 0, 0.9);  */
+	/* background-color: transparent; */
+	padding: 5rem 1.5rem 2rem;
 
 	transform: translateX(-100%);
-	transition: transform 0.3s ease-in-out;
+	transition: transform 0.4s ease, backdrop-filter 0.4s ease;
 
-	z-index: 999;
-	display: flex;
+	z-index: 998;
+	/* display: flex; */
+	display: none;
 	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
 
-	/* display: none; hidden by default */
-	/* flex-direction: column; */
+	backdrop-filter: blur(12px);
+	background-color: rgba(0, 0, 0, 0.5); /* adds subtle dark tint behind blur */
+	-webkit-backdrop-filter: blur(12px); /* for Safari */
+
 	/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 .mobile-nav.open {
