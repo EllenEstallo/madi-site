@@ -13,129 +13,91 @@
 	</head>
 
 	<body>
+		<div class="mobile-nav-bar">
+			<div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+
+		<nav class="mobile-nav" id="mobileNav">
+			<ul>
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="#about">ABOUT</a></li>
+				<li><a href="#media">MEDIA</a></li>
+				<li><a href="#engagements">ENGAGEMENTS</a></li>
+				<li><a href="#repertoire">REPERTOIRE</a></li>
+				<li><a href="#contact">CONTACT</a></li>
+			</ul>
+		</nav>
+
 		<div class="content-container">
-			<!-- DESKTOP NAV -->
 			<nav class="desktop-nav">
 				<ul>
-					<li><a class="nav-link" href="index.html">Home</a></li>
-					<li><a class="nav-link" href="about.html">About</a></li>
-					<li><a class="nav-link" href="#media">Media</a></li>
-					<li><a class="nav-link" href="#engagements">Engagements</a></li>
-					<li><a class="nav-link" href="#repertoire">Repertoire</a></li>
-					<li><a class="nav-link" href="#contact">Contact</a></li>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="#about">ABOUT</a></li>
+					<li><a href="#media">MEDIA</a></li>
+					<li><a href="#engagements">ENGAGEMENTS</a></li>
+					<li><a href="#repertoire">REPERTOIRE</a></li>
+					<li><a href="#contact">CONTACT</a></li>
 				</ul>
 			</nav>
-    
-			<!-- Mobile Top Nav Bar -->
-			<div class="mobile-nav-bar">
-				<div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
-					<span></span>
-					<span></span>
-					<span></span>
+			<div class="content-container">
+				<div class="hero-image">
+					<div class="hero-text-block scroll-in">
+						<h1 class="hero-name">Madison Hammel</h1>
+						<div class="tagline">An Artist in Bloom, One Aria at a Time</div>
+					</div>
 				</div>
 			</div>
-    
-    
-			<!-- MOBILE NAV -->
-			<nav class="mobile-nav" id="mobile-nav">
-				<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="#media">Media</a></li>
-				<li><a href="#engagements">Engagements</a></li>
-				<li><a href="#repertoire">Repertoire</a></li>
-				<li><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
-
-			<div class="photo-background">
-				<img
-					src="./Assets/homepage-iStock-467434437.jpg"
-					alt="Madison Hammel Headshot"
-					class="headshot"
-				/>
-				<div class="name-overlay">
-					<h1>Madison Hammel</h1>
-					<h2>Soprano</h2>
-				</div>
-				    
-
-			</div>
-
-			<section class="section">
-				<div class="box box-a">
-					<h2>About Madison</h2>
-				</div>
-				<div class="box box-b">
-					<p></p>
-						Madison Hammel is a versatile soprano, cantor, and teaching artist,
-						performing across sacred, operatic, and recital stages. With a
-						passion for both performance and education, she brings artistry and
-						clarity to every setting — from liturgical music to opera and voice
-						instruction — connecting deeply with audiences and students alike.
-						<br />
-						<br />
-					</p>
-				</div>
-			</section>
-			<section class="section">
-				<div class="box box-a">
-					<!-- Use EITHER a photo OR text below -->
-
-					<!-- Option 1: Insert a photo -->
-					<!-- <img src="your-photo.jpg" alt="Description of photo"> -->
-
-					<!-- Option 2: Insert text -->
-					<!-- <h2>Flexible Box A</h2>  -->
-					<p>text/image.</p> 
-				</div>
-				<div class="box box-b">
-					<h2>Box B</h2>
-					<p>This is your text content for Box B.</p>
-				</div>
-			</section>
-			<!-- 
-			<footer class="site-footer">
-				<p>&copy; 2025 Madison Hammel</p>
-
-				<nav class="footer-nav">
-					<a href="mailto:madison@example.com">madison@example.com</a> |
-					<a href="tel:+1234567890">(123) 456-7890</a> |
-					<a
-						href="https://www.instagram.com/madisonhammel"
-						target="_blank"
-						rel="noopener noreferrer"
-						>Instagram</a
-					>
-					|
-					<a href="resume-madison-hammel.pdf" download>Download Résumé</a>
-				</nav>
-
-				<p>
-					Based in South Jersey — Available for performance, teaching, and
-					liturgical services.
-				</p>
-			</footer> -->
 		</div>
 		<script>
 			function toggleMobileNav() {
-				const hamburger = document.getElementById('hamburger');
-				const nav = document.getElementById('mobile-nav');
-			
-				hamburger.classList.toggle('active');
-				nav.classList.toggle('active');
-			}
-		    
-			// Close mobile nav when any link is clicked
-			document.addEventListener('DOMContentLoaded', () => {
-      			document.querySelectorAll('#mobile-nav a').forEach(link => {
-        				link.addEventListener('click', () => {
-          				document.getElementById('hamburger').classList.remove('active');
-          				document.getElementById('mobile-nav').classList.remove('active');
-        				});
-      			});
-    			});
-		    </script>
+				const hamburger = document.getElementById("hamburger");
+				const mobileNav = document.getElementById("mobileNav");
 
+				hamburger.classList.toggle("active");
+				mobileNav.classList.toggle("open");
+			}
+
+			document.addEventListener("DOMContentLoaded", function () {
+				const textBlock = document.querySelector(".scroll-in");
+
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add("visible");
+							}
+						});
+					},
+					{
+						threshold: 0.1,
+					}
+				);
+
+				observer.observe(textBlock);
+			});
+
+			document.addEventListener("DOMContentLoaded", function () {
+				const textBlock = document.querySelector(".scroll-in");
+
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add("visible");
+							}
+						});
+					},
+					{
+						threshold: 0.1,
+					}
+				);
+
+				observer.observe(textBlock);
+			});
+		</script>
 	</body>
 </html>
