@@ -381,8 +381,7 @@ h1 {
 	width: 80%;
 	max-width: 300px;
 	height: 100vh;
-	/* background-color: black; */
-	background-color: transparent;
+	background-color: rgba(0, 0, 0, 0.9); /* semi-transparent black */
 	padding: 4rem 1.5rem 1.5rem;
 
 	transform: translateX(-100%);
@@ -398,6 +397,7 @@ h1 {
 }
 .mobile-nav.open {
 	transform: translateX(0); /* Slide in from left */
+	display: flex;
 }
 
 .mobile-nav ul {
@@ -482,8 +482,17 @@ h1 {
 	/* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); */
 	margin-bottom: 1rem;
 	color: white;
+
+	text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
 }
 
+.hero-text-block.visible .hero-name {
+	opacity: 1;
+	transform: translateY(0);
+}
 .hero-title {
 	font-size: 1.5rem;
 	font-weight: 400;
@@ -538,6 +547,9 @@ h1 {
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	color: white;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
 }
 
 .intro {
@@ -567,4 +579,23 @@ h1 {
 	/* background-color: black; */
 	background-color: #333;
 	color: white;
+}
+.hero-text-block.visible .tagline {
+	opacity: 1;
+	transform: translateY(0);
+}
+.site-footer {
+	text-align: center;
+	font-size: 0.875rem;
+	color: #999;
+	padding: 1rem 0;
+	opacity: 0; /* start hidden */
+	animation: footerFade 1s ease-out 2.5s forwards;
+	/* ↑ 1 s fade, begins 2.5 s after load; tweak delay as desired */
+}
+
+@keyframes footerFade {
+	to {
+		opacity: 1;
+	}
 }
