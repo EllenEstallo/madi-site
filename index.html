@@ -9,10 +9,14 @@
 			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="styles.css" />
+		<!-- <link rel="stylesheet" href="./CSS/01-typography-utilities.css" /> -->
+		<link rel="stylesheet" href="/styles.css" />
+		<link rel="stylesheet" href="./CSS/02-nav.css" />
+		<link rel="stylesheet" href="./03-home-hero.css" />
+		<!-- <link rel="stylesheet" href="styles1.css" /> -->
 	</head>
 
-	<body>
+	<body class="home">
 		<div class="mobile-nav-bar">
 			<div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
 				<span></span>
@@ -24,7 +28,7 @@
 		<nav class="mobile-nav" id="mobileNav">
 			<ul class="mobile-nav-links">
 				<li><a href="index.html">HOME</a></li>
-				<li><a href="#">ABOUT</a></li>
+				<li><a href="about.html">ABOUT</a></li>
 				<li><a href="#">MEDIA</a></li>
 				<li><a href="#">ENGAGEMENTS</a></li>
 				<li><a href="#">REPERTOIRE</a></li>
@@ -36,8 +40,8 @@
 			<nav class="desktop-nav">
 				<div class="desktop-nav-inner">
 					<ul>
-						<li><a href="#">HOME</a></li>
-						<li><a href="#">ABOUT</a></li>
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="about.html">ABOUT</a></li>
 						<li><a href="#">MEDIA</a></li>
 						<li><a href="#">ENGAGEMENTS</a></li>
 						<li><a href="#">REPERTOIRE</a></li>
@@ -46,7 +50,7 @@
 				</div>
 			</nav>
 			<div class="content-container">
-				<div class="hero-image">
+				<div class="hero-image home-hero">
 					<div class="hero-text-block scroll-in">
 						<h1 class="hero-name">Madison Hammel</h1>
 						<div class="tagline">An Artist in Bloom, One Aria at a Time</div>
@@ -54,55 +58,13 @@
 				</div>
 			</div>
 			<div class="footer-hover-zone">
-				<footer class="site-footer">&copy; 2025 Madison Hammel</footer>
+				<div class="site-footer-inner">
+					<footer class="site-footer">
+						<div class="footer-inner">&copy; 2025 Madison Hammel</div>
+					</footer>
+				</div>
 			</div>
 		</div>
-		<script>
-			function toggleMobileNav() {
-				const hamburger = document.getElementById("hamburger");
-				const mobileNav = document.getElementById("mobileNav");
-
-				hamburger.classList.toggle("active");
-				mobileNav.classList.toggle("open");
-			}
-
-			document.addEventListener("DOMContentLoaded", function () {
-				const textBlock = document.querySelector(".scroll-in");
-
-				const observer = new IntersectionObserver(
-					(entries) => {
-						entries.forEach((entry) => {
-							if (entry.isIntersecting) {
-								entry.target.classList.add("visible");
-							}
-						});
-					},
-					{
-						threshold: 0.1,
-					}
-				);
-
-				observer.observe(textBlock);
-			});
-
-			document.addEventListener("DOMContentLoaded", function () {
-				const textBlock = document.querySelector(".scroll-in");
-
-				const observer = new IntersectionObserver(
-					(entries) => {
-						entries.forEach((entry) => {
-							if (entry.isIntersecting) {
-								entry.target.classList.add("visible");
-							}
-						});
-					},
-					{
-						threshold: 0.1,
-					}
-				);
-
-				observer.observe(textBlock);
-			});
-		</script>
+		<script src="./JS/script.js"></script>
 	</body>
 </html>

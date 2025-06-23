@@ -9,148 +9,113 @@
 			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="./CSS/01-typography-utilities.css" />
+		<link rel="stylesheet" href="/styles.css" />
+		<link rel="stylesheet" href="./CSS/02-nav.css" />
+		<link rel="stylesheet" href="./04-page-hero.css" />
+		<link rel="stylesheet" href="./05-about.css" />
+		<!-- <link rel="stylesheet" href="styles1.css" /> -->
 	</head>
 
-	<body>
-		<div class="content-container">
-			<nav>
+	<body class="internal">
+		<div class="mobile-nav-bar">
+			<div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+
+		<nav class="mobile-nav" id="mobileNav">
+			<ul class="mobile-nav-links">
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="about.html">ABOUT</a></li>
+				<li><a href="#">MEDIA</a></li>
+				<li><a href="#">ENGAGEMENTS</a></li>
+				<li><a href="#">REPERTOIRE</a></li>
+				<li><a href="#">CONTACT</a></li>
+			</ul>
+		</nav>
+
+		<!-- <div class="content-container"> -->
+		<nav class="desktop-nav">
+			<div class="desktop-nav-inner">
 				<ul>
 					<li><a href="index.html">HOME</a></li>
 					<li><a href="about.html">ABOUT</a></li>
-					<li><a href="#media">MEDIA</a></li>
-					<li><a href="#engagements">ENGAGEMENTS</a></li>
-					<li><a href="#repertoire">REPERTOIRE</a></li>
-					<li><a href="#contact">CONTACT</a></li>
+					<li><a href="#">MEDIA</a></li>
+					<li><a href="#">ENGAGEMENTS</a></li>
+					<li><a href="#">REPERTOIRE</a></li>
+					<li><a href="#">CONTACT</a></li>
 				</ul>
-
-				<div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
-					<span></span><span></span>
-				</div>
-
-				<div class="mobile-nav" id="mobileNav">
-					<a href="index.html">HOME</a>
-					<a href="about.html">ABOUT</a>
-					<a href="#media">MEDIA</a>
-					<a href="#engagements">ENGAGEMENTS</a>
-					<a href="#repertoire">REPERTOIRE</a>
-					<a href="#contact">CONTACT</a>
-				</div>
-			</nav>
-
-			<div class="photo-background">
-				<img
-					src="./Assets/pexels-ulrick-t-15960984.jpg"
-					alt="About Pexel Photo"
-					class="About Pexel Photo"
-				/>
 			</div>
-			<div class="section">
-				<div class="section-left">About Madison</div>
-				<!-- <div class="section-right">
-					Madison Hammel is a versatile soprano, cantor, and teaching artist,
-					performing across sacred, operatic, and recital stages. With a passion
-					for both performance and education, she brings artistry and clarity to
-					every setting — from liturgical music to opera and voice instruction —
-					connecting deeply with audiences and students alike.
-					<br />
-					<br />
-					<a href="about.html" class="section-right-button">READ MORE</a>
-				</div> -->
+		</nav>
+
+		<div class="hero-container">
+			<div class="internal-hero">
+				<div class="hero-text-block scroll-in">
+					<h1 class="hero-name">About Madison</h1>
+				</div>
 			</div>
-			<div class="section">
-				<div class="section-left">
+		</div>
+
+		<section class="about-section">
+			<div class="about-grid">
+				<!-- Headshot -->
+				<div class="about-photo">
 					<img
-						src="./Assets/about-headshot.jpg"
-						alt="Madison Hammel resume photo"
-						class="about-headshot"
+						src="./Assets/Madison-headshot.jpg"
+						alt="Madison Hammel Headshot"
 					/>
 				</div>
 
-				<!-- <div class="section-left">About Madison</div> -->
-				<div class="section-right">
-					Madison Hammel is a versatile soprano, cantor, and teaching artist,
-					performing across sacred, operatic, and recital stages. With a passion
-					for both performance and education, she brings artistry and clarity to
-					every setting — from liturgical music to opera and voice instruction —
-					connecting deeply with audiences and students alike.
-					<br />
-					<br />
-					<a href="about.html" class="section-right-button">READ MORE</a>
+				<!-- Bio -->
+				<div class="about-bio">
+					<h1 class="text-xl mb-2">Madison Renee Hammel, Soprano</h1>
+					<p>
+						Madison Renee Hammel, Soprano, is a 2024 graduate of Oberlin College
+						and Conservatory, earning her Bachelor of Music (Vocal Performance,
+						studying under Professor Kendra Colton) and Bachelor of Arts in
+						Phsychology. She performed with the Oberlin Chamber Singers and most
+						recently sang the roles of Eurydice & La Musica in Monteverdi’s
+						L’Orfeo and Ms. Wordsworth in Britten’s Albert Herring with the
+						Oberlin Opera Theater. <br /><br />She currently serves with the
+						ArtistYear program as an Americorp Resident Teaching Fellow at
+						C.C.A. Baldi Middle School, where she supports the teaching of their
+						Theater and Music classes and recently assisted in putting on the
+						school’s first Musical Theater production, Moana Jr.
+						<br /><br />Madison has performed in several international choral
+						festivals, including Alta Pusteria International Choral Festival,
+						Idaho International Choral Festival, and the Montana International
+						Choral Festival. She has additionally performed at Carnegie Hall,
+						Thomaskirche in Leipzig, Germany, Tanglewood as part of the
+						Tanglewood Institute’s Young Artist Vocal Program, the Kimmel Center
+						as part of the Harmony for Peace Foundation’s International Peace
+						Day concerts, and the Academy of Music as part of the Pennsylvania
+						Ballet’s performance of Carmina Burana. <br /><br />Madison grew up
+						in Haddonfield, New Jersey where she graduated with honors from
+						Haddonfield Memorial High School. She studied voice and piano under
+						Ms. Kristine Biller, and was a long-standing member of Childrensong
+						of New Jersey under the artistic direction of founder Ms. Polly
+						Murray. Madison additionally studied under Ms. Jeanai La Vita while
+						attending Manhattan School of Music’s pre-college program.
+						<br /><br />Madison serves as a Cantor for several parishes in the
+						greater Philadelphia area, including Christ the King Catholic Church
+						in Haddonfield, NJ, James the Lesser Church in Jamesburg, NJ, and
+						Queenship of Mary in Plainsboro, NJ. She continues to be an avid
+						tennis player, as well as a dedicated home baker.
+					</p>
 				</div>
 			</div>
-			<div class="about-section">
-				Madison Renee Hammel, Soprano, is a 2024 graduate of Oberlin College and
-				Conservatory, earning her Bachelor of Music (Vocal Performance, studying
-				under Professor Kendra Colton) and Bachelor of Arts in Phsychology. She
-				performed with the Oberlin Chamber Singers and most recently sang the
-				roles of Eurydice & La Musica in Monteverdi’s L’Orfeo and Ms. Wordsworth
-				in Britten’s Albert Herring with the Oberlin Opera Theater. She
-				currently serves with the ArtistYear program as an Americorp Resident
-				Teaching Fellow at C.C.A. Baldi Middle School, where she supports the
-				teaching of their Theater and Music classes and recently assisted in
-				putting on the school’s first Musical Theater production, Moana Jr.
-				<br /><br />
-				Madison has performed in several international choral festivals,
-				including Alta Pusteria International Choral Festival, Idaho
-				International Choral Festival, and the Montana International Choral
-				Festival. She has additionally performed at Carnegie Hall, Thomaskirche
-				in Leipzig, Germany, Tanglewood as part of the Tanglewood Institute’s
-				Young Artist Vocal Program, the Kimmel Center as part of the Harmony for
-				Peace Foundation’s International Peace Day concerts, and the Academy of
-				Music as part of the Pennsylvania Ballet’s performance of Carmina
-				Burana.
-				<br /><br />Madison grew up in Haddonfield, New Jersey where she
-				graduated with honors from Haddonfield Memorial High School. She studied
-				voice and piano under Ms. Kristine Biller, and was a long-standing
-				member of Childrensong of New Jersey under the artistic direction of
-				founder Ms. Polly Murray. Madison additionally studied under Ms. Jeanai
-				La Vita while attending Manhattan School of Music’s pre-college program.
-				<br /><br />
-				Madison serves as a Cantor for several parishes in the greater
-				Philadelphia area, including Christ the King Catholic Church in
-				Haddonfield, NJ, James the Lesser Church in Jamesburg, NJ, and Queenship
-				of Mary in Plainsboro, NJ. She continues to be an avid tennis player, as
-				well as a dedicated home baker.
+		</section>
+
+		<div class="footer-hover-zone">
+			<div class="site-footer-inner">
+				<footer class="site-footer">
+					<div class="footer-inner">&copy; 2025 Madison Hammel</div>
+				</footer>
 			</div>
-			<br />
-			<br />
-			<a href="resume-madison-hammel.pdf" download class="section-button"
-				>Download Résumé</a
-			>
-			<br />
-			<br />
-			<br />
-			<footer class="site-footer">
-				<p>&copy; 2025 Madison Hammel</p>
-
-				<nav class="footer-nav">
-					<a href="mailto:madison@example.com">madison@example.com</a> |
-					<a href="tel:+1234567890">(123) 456-7890</a> |
-					<a
-						href="https://www.instagram.com/madisonhammel"
-						target="_blank"
-						rel="noopener noreferrer"
-						>Instagram</a
-					>
-					|
-					<a href="resume-madison-hammel.pdf" download>Download Résumé</a>
-				</nav>
-
-				<p>
-					Based in South Jersey — Available for performance, teaching, and
-					liturgical services.
-				</p>
-			</footer>
 		</div>
-
-		<script>
-			function toggleMobileNav() {
-				const hamburger = document.getElementById("hamburger");
-				const mobileNav = document.getElementById("mobileNav");
-				hamburger.classList.toggle("active");
-				mobileNav.classList.toggle("active");
-			}
-		</script>
+		<script src="./JS/script.js"></script>
 	</body>
 </html>

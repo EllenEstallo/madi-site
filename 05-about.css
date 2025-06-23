@@ -1,0 +1,67 @@
+.about-section {
+	padding: 6rem 3rem 4rem;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+@media (max-width: 768px) {
+	.about-section {
+		padding: 0;
+		width: 100%;
+		margin-top: -45%;
+	}
+}
+
+.about-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 3rem;
+	align-items: flex-start;
+}
+
+.about-photo {
+	flex: 1 1 350px;
+	max-width: 450px;
+}
+
+.about-photo img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	object-fit: cover;
+}
+
+.about-bio {
+	flex: 1 1 600px;
+}
+
+.about-bio h1 {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 1.5rem;
+}
+
+.about-bio p {
+	font-size: 1.125rem;
+	line-height: 1.75;
+	color: #222;
+	margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+	.about-section {
+		padding: 3rem 1.5rem 2rem;
+	}
+
+	.about-grid {
+		flex-direction: column;
+	}
+
+	.about-bio h1 {
+		font-size: 1.5rem;
+	}
+
+	.about-bio p {
+		font-size: 1rem;
+		line-height: 1.6;
+	}
+}

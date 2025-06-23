@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>About – Madison Hammel</title>
+
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Core & Utility CSS -->
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="./CSS/02-nav.css" />
+	</head>
+	<body>
+		<div class="mobile-nav-bar">
+			<div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+
+		<nav class="mobile-nav" id="mobileNav">
+			<ul class="mobile-nav-links">
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="about.html">ABOUT</a></li>
+				<li><a href="#">MEDIA</a></li>
+				<li><a href="#">ENGAGEMENTS</a></li>
+				<li><a href="#">REPERTOIRE</a></li>
+				<li><a href="#">CONTACT</a></li>
+			</ul>
+		</nav>
+
+		<div class="content-container">
+			<nav class="desktop-nav">
+				<div class="desktop-nav-inner">
+					<ul>
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="about.html">ABOUT</a></li>
+						<li><a href="#">MEDIA</a></li>
+						<li><a href="#">ENGAGEMENTS</a></li>
+						<li><a href="#">REPERTOIRE</a></li>
+						<li><a href="#">CONTACT</a></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="content-container">
+				<div class="hero-image about-hero">
+					<div class="hero-text-block scroll-in">
+						<h1 class="hero-name">About Madison</h1>
+					</div>
+				</div>
+			</div>
+			<div class="footer-hover-zone">
+				<footer class="site-footer">&copy; 2025 Madison Hammel</footer>
+			</div>
+		</div>
+
+		<!-- ================= MAIN CONTENT ====================== -->
+		<main class="content-container p-3 md-p-5">
+			<section
+				class="about-section"
+				style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem"
+			>
+				<!-- Headshot -->
+				<div class="about-photo" style="flex: 1 1 300px; max-width: 400px">
+					<img
+						src="assets/madison-headshot.jpg"
+						alt="Headshot of Madison Hammel"
+						style="width: 100%; height: auto; border-radius: 8px"
+					/>
+				</div>
+
+				<!-- Bio Text -->
+				<div class="about-text" style="flex: 1 1 400px">
+					<p class="text-md text-gray line-base mb-2">
+						<strong>Madison Hammel</strong> is a classically trained lyric
+						soprano celebrated for her expressive tone and elegant stage
+						presence. Her repertoire spans Baroque masterpieces to contemporary
+						premieres, bringing vocal versatility and emotional depth to each
+						performance.
+					</p>
+					<p class="text-md text-gray line-base mb-2">
+						When not on stage, Madison serves as a cantor and teaching artist,
+						guiding emerging singers in healthy technique and musical
+						interpretation. She holds a degree in Vocal Performance and appears
+						regularly in concert halls, sacred spaces, and community events.
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<!-- ================= FOOTER ============================ -->
+		<div class="footer-hover-zone">
+			<footer class="site-footer">&copy; 2025 Madison Hammel</footer>
+		</div>
+
+		<!-- ============== OPTIONAL: NAV SCRIPT ================= -->
+		<!-- Ensure the same script is present in index.html -->
+		<!-- <script>
+			function toggleMobileNav() {
+				document.getElementById("hamburger").classList.toggle("active");
+				document.getElementById("mobileNav").classList.toggle("open");
+			}
+		</script> -->
+		<script src="./JS/script.js"></script>
+	</body>
+</html>
