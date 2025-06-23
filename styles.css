@@ -58,50 +58,86 @@ body {
    FOOTER
 ==================================== */
 
+/* ====================================
+   FOOTER – unified rules
+   ------------------------------------
+   • Homepage  : fades-in & overlays hero
+   • Internal  : solid black strip, no animation,
+                 constrained to 1440 px centre
+==================================== */
+
+/* ❶  SHARED WRAPPER
+   ──────────────────────────── */
 .footer-hover-zone {
-	position: absolute;
-	bottom: 0;
-	left: 0;
+	/* spans full width but has NO colour */
 	width: 100%;
-	height: 40px;
+	display: flex;
+	justify-content: center;
+	position: relative;
 	z-index: 10;
 }
 
+/* ❷  CENTRED CONTAINER (1440 px max) */
 .site-footer-inner {
-	position: absolute;
-	bottom: 0;
-	left: 0;
 	width: 100%;
-	text-align: center;
+	max-width: 1440px;
+	margin: 0 auto;
 }
 
+/* ❸  BASIC FOOTER TEXT STYLING (shared) */
 .site-footer {
+	font-size: 0.875rem;
+	text-align: center;
+	padding: 1rem 0;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+	pointer-events: none; /* default = inactive */
+	opacity: 0; /* default = hidden   */
+	transition: opacity 0.4s ease;
+}
+
+/* ------------------------------------
+	 HOMEPAGE  ( <body class="home"> )
+	 ------------------------------------ */
+body.home .footer-hover-zone {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	width: 100%;
-	text-align: center;
-	font-size: 0.875rem;
-	color: rgba(255, 253, 252, 0.519);
-	padding: 1rem 0;
-	background-color: rgba(0, 0, 0, 0.2);
-	opacity: 0;
-	pointer-events: none;
-	transition: opacity 0.4s ease;
-	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+	z-index: 100;
 }
 
-.footer-hover-zone:hover .site-footer,
-.hero-image:hover .site-footer {
+body.home .site-footer-inner {
+	background: transparent; /* show hero underlay */
+}
+
+body.home .site-footer {
+	background: rgba(0, 0, 0, 0.25);
+	color: rgba(255, 255, 255, 0.8);
+}
+
+/* fade-in trigger */
+body.home .footer-hover-zone:hover .site-footer,
+body.home .hero-image:hover .site-footer {
 	opacity: 1;
 	pointer-events: auto;
 }
 
-/* Footer animation (optional) */
-@keyframes footerFade {
-	to {
-		opacity: 1;
-	}
+/* ------------------------------------
+	 INTERNAL PAGES  ( <body class="internal"> )
+	 ------------------------------------ */
+body.internal .footer-hover-zone {
+	position: relative; /* normal document flow */
+}
+
+body.internal .site-footer-inner {
+	background: #000; /* black strip limited to 1440 px */
+}
+
+body.internal .site-footer {
+	background: transparent; /* colour handled by container   */
+	color: #fff;
+	opacity: 1; /* always visible                */
+	pointer-events: auto;
+	transition: none; /* no animation                  */
 }
 
 /* ====================================

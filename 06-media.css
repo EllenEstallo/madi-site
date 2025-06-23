@@ -1,0 +1,98 @@
+/* ========================
+   MEDIA PAGE STYLES
+======================== */
+
+/* === HERO IMAGE === */
+.internal-hero {
+	height: 70vh;
+	background-image: url("./Assets/about-banner.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-top: 64px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.hero-text-block {
+	text-align: center;
+	color: white;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-name {
+	font-size: 2.5rem;
+	font-weight: 700;
+	font-family: "Montserrat", sans-serif;
+	margin-bottom: 0.5rem;
+}
+
+.tagline {
+	font-size: 1.125rem;
+	font-weight: 400;
+	font-family: "Montserrat", sans-serif;
+}
+
+/* === VIDEO SECTION === */
+.media-section {
+	max-width: 1440px;
+	margin: 4rem auto;
+	padding: 0 1rem;
+}
+
+.section-title {
+	font-size: 2rem;
+	font-weight: 600;
+	margin-bottom: 2rem;
+	text-align: center;
+	font-family: "Montserrat", sans-serif;
+}
+
+.video-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	justify-items: center;
+}
+
+.video-grid iframe {
+	width: 100%;
+	height: 250px;
+	border: none;
+}
+
+/* === PHOTO GALLERY SECTION === */
+.photo-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 1.5rem;
+	justify-items: center;
+}
+
+.photo-gallery img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease;
+}
+
+.photo-gallery img:hover {
+	transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+	.hero-name {
+		font-size: 3rem;
+	}
+
+	.tagline {
+		font-size: 1.25rem;
+	}
+
+	.video-grid iframe {
+		height: 320px;
+	}
+}
