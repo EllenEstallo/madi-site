@@ -1,3 +1,5 @@
+console.log("✅ script.js is running");
+
 // HAMBURGER ANIMATION //
 function toggleMobileNav() {
 	const hamburger = document.getElementById("hamburger");
