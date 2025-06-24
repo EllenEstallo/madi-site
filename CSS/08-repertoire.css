@@ -1,0 +1,52 @@
+.content-container {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.accordion {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 1rem 2rem; /* match panel side padding */
+	background-color: #2e2e2e;
+	color: white;
+	cursor: pointer;
+	text-align: left;
+	border: none;
+	outline: none;
+	transition: background-color 0.3s ease;
+	font-size: 1.2rem;
+}
+
+.accordion:hover {
+	background-color: #444;
+}
+
+.panel {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+	padding: 1rem 2rem;
+	background-color: #f9f9f9;
+	border-left: 4px solid #ccc;
+	display: none; /* kept for accordion behavior */
+}
+
+.panel h3,
+.panel ul {
+	margin: 0 0 1rem;
+}
+
+.panel ul {
+	padding-left: 1.5rem;
+}
+@media (max-width: 768px) {
+	.accordion {
+		margin-top: -100px;
+		z-index: 1;
+	}
+	.panel {
+		grid-template-columns: 1fr;
+	}
+}

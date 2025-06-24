@@ -32,9 +32,11 @@
 }
 
 .repertoire-hero {
-	background-image: url("./Assets/repertoire-banner-iStock-1064244060.jpg");
-	background-size: contain;
+	/* background-image: url("./Assets/repertoire-banner-iStock-1064244060-dark.jpg"); */
+	background-image: url("./Assets/r1-iStock-486440133.jpg");
+	background-size: cover;
 }
+/* for */
 
 .hero-text-block {
 	position: absolute;
