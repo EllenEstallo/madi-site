@@ -18,14 +18,22 @@
 .internal-hero {
 	width: 100%;
 	max-width: 1440px;
-	/* background-color: black;  */
 	background-color: black;
-	background-image: url("./Assets/about-banner.jpg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 60vh;
 	margin-top: 64px;
+}
+
+/* Page-specific hero images */
+.about-hero {
+	background-image: url("./Assets/about-banner.jpg");
+}
+
+.repertoire-hero {
+	background-image: url("./Assets/repertoire-banner-iStock-1064244060.jpg");
+	background-size: contain;
 }
 
 .hero-text-block {
