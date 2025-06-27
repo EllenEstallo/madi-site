@@ -1,6 +1,27 @@
 /* =============================
    TYPOGRAPHY SYSTEM
 ============================= */
+/* =============================
+   HEADINGS OVERVIEW (SEMANTIC & VISUAL ROLES)
+============================= */
+
+/* 
+<h1 class="hero-name">Madison Hammel</h1>
+- Used as the homepage’s main visual identity.
+- Large, animated, all-uppercase with white text and text-shadow.
+- Should only appear once per page, typically over a background image.
+- Responsive using clamp(), scales between 2rem and 3.5rem.
+
+<h1 class="text-xl mb-2">Madison Renee Hammel, Soprano</h1>
+- Used on internal pages (e.g. About, Media) as a top-level section title.
+- Uses utility classes: text-xl = 1.25rem, mb-2 = 0.5rem margin-bottom.
+- Visually smaller than hero-name and not animated.
+
+<h2>Partial Roles</h2>
+- Used as subsection headings on content pages like Repertoire.
+- Custom styles often apply: font-size ~1.75rem, with spacing and underline.
+- Should be used consistently to break content into meaningful sections.
+*/
 
 :root {
 	--font-family-base: "Montserrat", sans-serif;

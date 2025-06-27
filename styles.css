@@ -7,7 +7,9 @@
 	margin: 0;
 	padding: 0;
 }
-
+html {
+	overflow-x: hidden;
+}
 body {
 	font-family: "Montserrat", sans-serif;
 
@@ -16,6 +18,50 @@ body {
 	color: var(--color-dark);
 	/* background-color: black; */
 	background-color: white;
+}
+
+/* =============================
+   GLOBAL TYPOGRAPHY STYLES
+============================= */
+
+body {
+	font-family: var(--font-family-base);
+	font-size: var(--font-size-md);
+	line-height: var(--line-height-base);
+	color: var(--color-dark);
+	background-color: var(--color-light); /* adjust if needed */
+	margin: 0;
+}
+
+h1 {
+	font-size: var(--font-size-xl);
+	font-weight: var(--font-weight-bold);
+	line-height: 1.3;
+	margin-bottom: 1rem;
+	color: var(--color-dark);
+}
+
+h2 {
+	font-size: 1.75rem;
+	font-weight: var(--font-weight-bold);
+	line-height: 1.4;
+	margin-bottom: 0.75rem;
+	color: var(--color-dark);
+}
+
+h3 {
+	font-size: 1.375rem;
+	font-weight: var(--font-weight-bold);
+	line-height: 1.4;
+	margin-bottom: 0.5rem;
+	color: var(--color-dark);
+}
+
+p {
+	font-size: var(--font-size-md);
+	line-height: var(--line-height-base);
+	color: var(--color-dark);
+	margin-bottom: 1.5rem;
 }
 
 .content-container {
