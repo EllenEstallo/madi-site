@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Madison Hammel</title>
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./typography-utilities.css" />
+		<link rel="stylesheet" href="./styles.css" />
+		<link rel="stylesheet" href="./nav.css" />
+		<link rel="stylesheet" href="./page-hero.css" />
+		<!-- <link rel="stylesheet" href="./about.css" /> -->
+		<link rel="stylesheet" href="./media.css" />
+	</head>
+
+	<body class="internal">
+		<div class="mobile-nav-bar">
+			<div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+
+		<nav class="mobile-nav" id="mobileNav">
+			<ul class="mobile-nav-links">
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="about.html">ABOUT</a></li>
+				<li><a href="media.html">MEDIA</a></li>
+				<li><a href="#">ENGAGEMENTS</a></li>
+				<li><a href="repertoire.html">REPERTOIRE</a></li>
+				<li><a href="#">CONTACT</a></li>
+			</ul>
+		</nav>
+
+		<!-- <div class="content-container"> -->
+		<nav class="desktop-nav">
+			<div class="desktop-nav-inner">
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="media.html">MEDIA</a></li>
+					<li><a href="#">ENGAGEMENTS</a></li>
+					<li><a href="repertoire.html">REPERTOIRE</a></li>
+					<li><a href="#">CONTACT</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="hero-container">
+			<div class="internal-hero media-hero">
+				<div class="hero-overlay"></div>
+
+				<div class="hero-text-block scroll-in">
+					<h1
+						class="hero-name"
+						style="
+							color: rgb(250, 248, 248);
+							text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+						"
+					>
+						Media
+					</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="content-container">
+			<section class="media-section">
+				<!-- Video Section -->
+				<section class="video-gallery">
+					<br />
+					<h2 class="section-title">Video</h2>
+
+					<div class="video-reel">
+						<h3>Vocal Excerpts</h3>
+						<p class="video-caption">
+							Professionally recorded selections from a recent studio session.
+						</p>
+						<video controls width="100%">
+							<source src="./Assets/videos/video-reel.mp4" type="video/mp4" />
+							Your browser does not support the video tag.
+						</video>
+					</div>
+
+					<!-- Full-length Videos -->
+					<div class="full-videos">
+						<h3>Full Performances</h3>
+						<div class="video-grid">
+							<video controls>
+								<source
+									src="./Assets/videos/full-aria-1.mp4"
+									type="video/mp4"
+								/>
+							</video>
+							<video controls>
+								<source
+									src="./Assets/videos/full-aria-2.mp4"
+									type="video/mp4"
+								/>
+							</video>
+							<video controls>
+								<source
+									src="./Assets/videos/full-aria-3.mp4"
+									type="video/mp4"
+								/>
+							</video>
+							<video controls>
+								<source
+									src="./Assets/videos/full-aria-4.mp4"
+									type="video/mp4"
+								/>
+							</video>
+						</div>
+					</div>
+				</section>
+
+				<!-- Photo Section -->
+				<section class="photo-gallery">
+					<h2 class="section-title">Photos</h2>
+					<div class="photo-grid">
+						<img src="./Assets/photos/photo1.jpg" alt="Performance Photo 1" />
+						<img src="./Assets/photos/photo2.jpg" alt="Performance Photo 2" />
+						<img src="./Assets/photos/photo3.jpg" alt="Performance Photo 3" />
+						<img src="./Assets/photos/photo4.jpg" alt="Performance Photo 4" />
+						<img src="./Assets/photos/photo5.jpg" alt="Performance Photo 5" />
+						<img src="./Assets/photos/photo6.jpg" alt="Performance Photo 6" />
+						<img src="./Assets/photos/photo7.jpg" alt="Performance Photo 7" />
+						<img src="./Assets/photos/photo8.jpg" alt="Performance Photo 8" />
+						<img src="./Assets/photos/photo9.jpg" alt="Performance Photo 9" />
+						<img src="./Assets/photos/photo10.jpg" alt="Performance Photo 10" />
+						<img src="./Assets/photos/photo11.jpg" alt="Performance Photo 11" />
+						<img src="./Assets/photos/photo12.jpg" alt="Performance Photo 12" />
+					</div>
+				</section>
+			</section>
+		</div>
+
+		<div class="footer-hover-zone">
+			<div class="site-footer-inner">
+				<footer class="site-footer">
+					<div class="footer-inner">&copy; 2025 Madison Hammel</div>
+				</footer>
+			</div>
+		</div>
+		<script src="./JS/script.js"></script>
+	</body>
+</html>

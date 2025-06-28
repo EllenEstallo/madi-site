@@ -30,13 +30,22 @@
 .about-hero {
 	background-image: url("./Assets/about-banner.jpg");
 }
-
+.media-hero {
+	background-image: url("./Assets/media-banner-iStock-578800816.jpg");
+	background-size: cover;
+	background-color: white;
+}
 .repertoire-hero {
-	/* background-image: url("./Assets/repertoire-banner-iStock-1064244060-dark.jpg"); */
 	background-image: url("./Assets/r1-iStock-486440133.jpg");
 	background-size: cover;
+	background-color: white;
 }
-/* for */
+
+.contact-hero {
+	background-image: url("./Assets/contact-banner-iStock-490652341.jpg");
+	background-size: cover;
+	background-color: white;
+}
 
 .hero-text-block {
 	position: absolute;
@@ -65,6 +74,7 @@
 	}
 }
 
+/*  */
 .hero-text-block.visible {
 	opacity: 1;
 	transform: translate(-50%, 0);

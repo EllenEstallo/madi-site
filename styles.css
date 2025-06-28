@@ -12,12 +12,12 @@ html {
 }
 body {
 	font-family: "Montserrat", sans-serif;
-
+	background-color: red;
 	font-size: 1rem;
 	line-height: 1.6;
 	color: var(--color-dark);
 	/* background-color: black; */
-	background-color: white;
+	/* background-color: red; */
 }
 body.home {
 	overflow: hidden;
@@ -80,48 +80,7 @@ p {
 	box-sizing: border-box;
 }
 
-/* .intro {
-	font-size: 1rem;
-	font-weight: 300;
-	max-width: 1000px;
-	margin: 0 auto 1.5rem;
-	line-height: 1.6;
-	color: white;
-} */
-
-/* .hero-button {
-	display: inline-block;
-	padding: 0.6rem 1.5rem;
-	font-size: 0.9rem;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	text-decoration: none;
-	color: black;
-	background-color: white;
-	border: 1px solid black;
-	border-radius: 2px;
-	transition: all 0.3s ease;
-} */
-
-/* .hero-button:hover {
-	background-color: #333;
-	color: white;
-} */
-
-/* ====================================
-   FOOTER
-==================================== */
-
-/* ====================================
-   FOOTER – unified rules
-   ------------------------------------
-   • Homepage  : fades-in & overlays hero
-   • Internal  : solid black strip, no animation,
-                 constrained to 1440 px centre
-==================================== */
-
-/* ❶  SHARED WRAPPER
-   ──────────────────────────── */
+/*  */
 .footer-hover-zone {
 	/* spans full width but has NO colour */
 	width: 100%;
@@ -193,36 +152,3 @@ body.internal .site-footer {
 	pointer-events: auto;
 	transition: none; /* no animation                  */
 }
-
-/* ====================================
-   BUTTON STYLES
-==================================== */
-
-/* .btn {
-	display: inline-block;
-	padding: 0.75rem 1.5rem;
-	background-color: var(--color-accent);
-	color: white;
-	border: none;
-	border-radius: 4px;
-	text-decoration: none;
-	font-size: 1rem;
-	font-weight: 600;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-} */
-
-/* .btn:hover {
-	background-color: #b43f5d;
-} */
-
-/* .btn-outline {
-	background: transparent;
-	color: var(--color-accent);
-	border: 2px solid var(--color-accent);
-}
-
-.btn-outline:hover {
-	background: var(--color-accent);
-	color: white;
-} */
