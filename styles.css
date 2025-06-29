@@ -36,7 +36,8 @@ body {
 	font-size: var(--font-size-md);
 	line-height: var(--line-height-base);
 	color: var(--color-dark);
-	background-color: var(--color-light); /* adjust if needed */
+	/* background-color: var(--color-light); adjust if needed */
+	background-color: black;
 	margin: 0;
 }
 
