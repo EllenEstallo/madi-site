@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Madison Hammel</title>
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./typography-utilities.css" />
+		<link rel="stylesheet" href="./styles.css" />
+		<link rel="stylesheet" href="./nav.css" />
+		<link rel="stylesheet" href="./page-hero.css" />
+		<link rel="stylesheet" href="./contact.css" />
+		<style>
+			.content-container {
+				padding-left: 1.5rem;
+				padding-right: 1.5rem;
+			}
+
+			@media (min-width: 1024px) {
+				.content-container {
+					padding-left: 4rem;
+					padding-right: 4rem;
+				}
+			}
+
+			.engagement-section {
+				margin-top: 3rem; /* Adjust as needed (e.g., 2rem, 4rem) */
+			}
+
+			.engagement-item {
+				display: flex;
+				flex-direction: column;
+				gap: 1.5rem;
+				margin-top: 2rem;
+			}
+
+			@media (min-width: 768px) {
+				.engagement-item {
+					flex-direction: row;
+					align-items: flex-start;
+				}
+			}
+
+			.engagement-poster {
+				max-width: 100%;
+				width: 300px;
+				border-radius: 12px;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+			}
+
+			.engagement-details {
+				flex: 1;
+				font-size: 1rem;
+				line-height: 1.6;
+			}
+
+			.ticket-link {
+				display: inline-block;
+				margin-top: 0.5rem;
+				padding: 0.5rem 1rem;
+				background-color: var(--color-accent);
+				color: white;
+				text-decoration: none;
+				border-radius: 6px;
+				font-weight: bold;
+			}
+
+			.ticket-link:hover {
+				background-color: #9c3650;
+			}
+		</style>
+	</head>
+
+	<body class="internal">
+		<div class="mobile-nav-bar">
+			<div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+
+		<nav class="mobile-nav" id="mobileNav">
+			<ul class="mobile-nav-links">
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="about.html">ABOUT</a></li>
+				<li><a href="media.html">MEDIA</a></li>
+				<li><a href="engagements.html">ENGAGEMENTS</a></li>
+				<li><a href="repertoire.html">REPERTOIRE</a></li>
+				<li><a href="#">CONTACT</a></li>
+			</ul>
+		</nav>
+
+		<!-- <div class="content-container"> -->
+		<nav class="desktop-nav">
+			<div class="desktop-nav-inner">
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="media.html">MEDIA</a></li>
+					<li><a href="engagements.html">ENGAGEMENTS</a></li>
+					<li><a href="repertoire.html">REPERTOIRE</a></li>
+					<li><a href="#">CONTACT</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="hero-container">
+			<div class="internal-hero engagements-hero">
+				<div class="hero-overlay"></div>
+
+				<div class="hero-text-block scroll-in">
+					<h1
+						class="hero-name"
+						style="color: white; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7)"
+					>
+						ENGAGEMENTS
+					</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="content-container">
+			<section class="engagement-section">
+				<div class="content-container">
+					<section class="engagement-section">
+						<div class="engagement-item">
+							<img
+								src="./Assets/dido-and-aeneas-poster-jpg.jpg"
+								alt="Dido and Aeneas Poster"
+								class="engagement-poster"
+							/>
+							<div class="engagement-details">
+								<h2 class="text-xl">Dido and Aeneas by Henry Purcell</h2>
+								<p>
+									Madison Hammel performs as the
+									<strong>Second Woman</strong> in this production by the
+									Delaware Valley Opera Company, part of their 2025–2026 Season.
+								</p>
+								<p>
+									<strong>Performance Dates:</strong><br />
+									Friday, August 22 at 7:00 PM<br />
+									Sunday, August 24 at 3:00 PM
+								</p>
+								<p>
+									<strong>Venue:</strong><br />
+									The First Presbyterian Church Germantown<br />
+									35 W. Chelten Avenue, Philadelphia, PA 19144
+								</p>
+								<p>
+									<a
+										href="https://www.ticketleap.events/tickets/dvopera/dido-amp-aeneas"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="ticket-link"
+									>
+										Get Tickets
+									</a>
+								</p>
+							</div>
+						</div>
+					</section>
+				</div>
+			</section>
+		</div>
+		<!-- </section> -->
+		<!-- </div> -->
+
+		<div class="footer-hover-zone">
+			<div class="site-footer-inner">
+				<footer class="site-footer">
+					<div class="footer-inner">&copy; 2025 Madison Hammel</div>
+				</footer>
+			</div>
+		</div>
+		<script src="./JS/script.js"></script>
+	</body>
+</html>

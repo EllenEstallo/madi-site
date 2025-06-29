@@ -40,6 +40,11 @@
 	background-size: cover;
 	background-color: white;
 }
+.engagements-hero {
+	background-image: url("./Assets/engagements-banner-iStock-2152048672.jpg");
+	background-size: cover;
+	/* background-color: white; */
+}
 
 .contact-hero {
 	background-image: url("./Assets/contact-banner-iStock-490652341.jpg");
