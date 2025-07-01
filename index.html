@@ -22,16 +22,17 @@
 			body {
 				font-family: "Montserrat", sans-serif;
 				/* font-family: var(--font-family-base);
-	font-size: var(--font-size-md);
-	line-height: var(--line-height-base);
-	color: var(--color-dark); */
+				font-size: var(--font-size-md);
+				line-height: var(--line-height-base);
+				color: var(--color-dark); */
 				/* background-color: var(--color-light); adjust if needed */
 				background-color: black;
 				color: white;
-				/* margin: 0; */
+				
 			}
 			body.home {
-				overflow: hidden;
+				overflow-x: hidden;
+				overflow-y: hidden;
 				height: 100vh;
 				width: 100vw;
 				margin: 0;
@@ -61,8 +62,7 @@
 	margin-bottom: 12vh; /* adjust as needed */
 	opacity: 0;
 	transform: translateY(20px);
-	/* transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s; */
-	transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+	transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
 }
 
 
@@ -273,7 +273,7 @@
 		</style>
 	</head>
 
-	<body class="about">
+	<body class="home">
 		<!-- ======= MOBILE NAV 'toggle' -->
 		<div class="mobile-nav-bar">
 			<div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
@@ -320,16 +320,6 @@
 			<h1 class="hero-name">Madison Hammel</h1> 
 			<div class="tagline">An Artist in Bloom, One Aria at a Time</div>
 		</div>
-		<!-- </div>  -->
-		<!-- </div>
-			<div class="footer-hover-zone">
-				<div class="site-footer-inner">
-					<footer class="site-footer"> -->
-						<!-- <div class="footer-inner">&copy; 2025 Madison Hammel</div> -->
-					<!-- </footer> -->
-				<!-- </div> -->
-			<!-- </div> -->
-		 <!-- </div> --> 
 		<script>
 			// =====  HAMBURGER ANIMATION ===== //
 			function toggleMobileNav() {

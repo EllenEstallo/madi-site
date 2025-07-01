@@ -12,39 +12,50 @@
 			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap"
 			rel="stylesheet"
 		/>
-		<!--  
-		<link rel="stylesheet" href="./typography-utilities.css" />
-		<link rel="stylesheet" href="./styles.css" />
-		<link rel="stylesheet" href="./nav.css" />
-		<link rel="stylesheet" href="./home-hero.css" /> -->
 		<style>
 			/* ========== BASE BODY STYLE =========== */
 			body {
 				font-family: "Montserrat", sans-serif;
-				/* font-family: var(--font-family-base);
-	font-size: var(--font-size-md);
-	line-height: var(--line-height-base);
-	color: var(--color-dark); */
-				/* background-color: var(--color-light); adjust if needed */
-				background-color: black;
+				background-color: white;
 				color: white;
 				/* margin: 0; */
 			}
-			body.home {
+			body.about {
 				overflow: hidden;
 				height: 100vh;
 				width: 100vw;
 				margin: 0;
 				padding: 0;
 			}
+			.content-container {
+				background-color: white;
+				width: 100%;
+				max-width: 1440px;
+				margin: 0 auto;
+				min-height: 100vh;
+			}
+
 			/* ========== HERO SECTION =========== */
 			.hero-image {
 				position: relative;
 				/* background-color: black; */
 			}
-			.home-hero {
+			/* .home-hero {
 				height: 100dvh;
-				background-image: url("./Assets/homepage-iStock-467434437.jpg");
+				/* background-image: url("./Assets/homepage-iStock-467434437.jpg"); */
+			/* background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				padding: 0 1rem;
+			} */
+			.about-banner {
+				height: 100dvh;
+				background-image: url("./Assets/about-banner.jpg");
 				background-size: cover;
 				background-position: center;
 				background-repeat: no-repeat;
@@ -57,13 +68,12 @@
 			}
 
 			.hero-text-block.scroll-in {
-	margin-top: auto;
-	margin-bottom: 12vh; /* adjust as needed */
-	opacity: 0;
-	transform: translateY(20px);
-	transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
-}
-
+				margin-top: auto;
+				margin-bottom: 12vh; /* adjust as needed */
+				opacity: 0;
+				transform: translateY(20px);
+				transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+			}
 
 			.scroll-in.visible {
 				opacity: 1;
@@ -111,6 +121,7 @@
 				width: 100%;
 				height: 2px;
 				background-color: white;
+				/* background-color: black; */
 				border-radius: 1px;
 				transition: all 0.3s ease;
 			}
@@ -178,6 +189,8 @@
 
 			.mobile-nav li a {
 				color: white;
+				/* color: black; */
+
 				text-decoration: none;
 				font-size: 1.2rem;
 				font-weight: 500;
@@ -231,8 +244,9 @@
 				justify-content: center;
 				align-items: center;
 			}
-			body.home .desktop-nav-inner {
-				background-color: transparent;
+			body.about .desktop-nav-inner {
+				/* background-color: transparent; */
+				background-color: black;
 			}
 			.desktop-nav ul {
 				display: flex;
@@ -254,6 +268,7 @@
 			.desktop-nav li a:hover::after {
 				width: 100%;
 			}
+
 			/* ========== MEDIA QUERIES =========== */
 
 			@media (min-width: 769px) {
@@ -272,7 +287,7 @@
 		</style>
 	</head>
 
-	<body class="home">
+	<body class="about">
 		<!-- ======= MOBILE NAV 'toggle' -->
 		<div class="mobile-nav-bar">
 			<div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
@@ -311,24 +326,23 @@
 			</div>
 		</nav>
 		<!--  -->
-		<!-- <div class="content-container"> -->
-
-		<!-- ======= HERO IMAGE + Text  ============= -->
-		<div class="hero-image home-hero">
-			<div class="hero-text-block scroll-in">
+		<div class="content-container">
+			<!-- ======= HERO IMAGE + Text  ============= -->
+			<div class="hero-image about-banner">
+				<!-- <div class="hero-text-block scroll-in">
 			<h1 class="hero-name">Madison Hammel</h1> 
-			<div class="tagline">An Artist in Bloom, One Aria at a Time</div>
+			<div class="tagline">An Artist in Bloom, One Aria at a Time</div> -->
+			</div>
 		</div>
-		<!-- </div>  -->
 		<!-- </div>
-			<div class="footer-hover-zone">
-				<div class="site-footer-inner">
-					<footer class="site-footer"> -->
-						<!-- <div class="footer-inner">&copy; 2025 Madison Hammel</div> -->
-					<!-- </footer> -->
-				<!-- </div> -->
-			<!-- </div> -->
-		 <!-- </div> --> 
+		<div class="footer-hover-zone">
+			<div class="site-footer-inner"> -->
+		<footer class="site-footer">
+			<div class="footer-inner">&copy; 2025 Madison Hammel</div>
+		</footer>
+		<!-- </div> -->
+		<!-- </div> -->
+		<!-- </div> -->
 		<script>
 			// =====  HAMBURGER ANIMATION ===== //
 			function toggleMobileNav() {
@@ -340,31 +354,31 @@
 			}
 
 			// <!-- ======= SCROLL-IN   ============= -->
-			document.addEventListener("DOMContentLoaded", function () {
-				const textBlock = document.querySelector(".scroll-in");
+			// document.addEventListener("DOMContentLoaded", function () {
+			// 	const textBlock = document.querySelector(".scroll-in");
 
-				const observer = new IntersectionObserver(
-					(entries) => {
-						entries.forEach((entry) => {
-							if (entry.isIntersecting) {
-								entry.target.classList.add("visible");
+			// 	const observer = new IntersectionObserver(
+			// 		(entries) => {
+			// 			entries.forEach((entry) => {
+			// 				if (entry.isIntersecting) {
+			// 					entry.target.classList.add("visible");
 
-								// ✅ Add 'mobile' class at the same time as 'visible'
-								if (window.innerWidth <= 768) {
-									entry.target.classList.add("mobile");
-								}
-							}
-						});
-					},
-					{
-						threshold: 0.1,
-					}
-				);
+			// 					// ✅ Add 'mobile' class at the same time as 'visible'
+			// 					if (window.innerWidth <= 768) {
+			// 						entry.target.classList.add("mobile");
+			// 					}
+			// 				}
+			// 			});
+			// 		},
+			// 		{
+			// 			threshold: 0.1,
+			// 		}
+			// 	);
 
-				if (textBlock) {
-					observer.observe(textBlock);
-				}
-			});
+			// 	if (textBlock) {
+			// 		observer.observe(textBlock);
+			// 	}
+			// });
 		</script>
 	</body>
 </html>
