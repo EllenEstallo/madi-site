@@ -1,21 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!-- ======= META & TITLE =======-->
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Madison Hammel</title>
 
+		<!-- ======= FONT =======-->
 		<link
 			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap"
 			rel="stylesheet"
 		/>
+		<!--  
 		<link rel="stylesheet" href="./typography-utilities.css" />
 		<link rel="stylesheet" href="./styles.css" />
 		<link rel="stylesheet" href="./nav.css" />
-		<link rel="stylesheet" href="./home-hero.css" />
+		<link rel="stylesheet" href="./home-hero.css" /> -->
+		<style>
+			/* ========== BASE BODY STYLE =========== */
+			body {
+				font-family: "Montserrat", sans-serif;
+				/* font-family: var(--font-family-base);
+	font-size: var(--font-size-md);
+	line-height: var(--line-height-base);
+	color: var(--color-dark); */
+				/* background-color: var(--color-light); adjust if needed */
+				background-color: black;
+				color: white;
+				/* margin: 0; */
+			}
+			body.home {
+				overflow: hidden;
+				height: 100vh;
+				width: 100vw;
+				margin: 0;
+				padding: 0;
+			}
+			/* ========== HERO SECTION =========== */
+			.hero-image {
+				position: relative;
+				/* background-color: black; */
+			}
+			.home-hero {
+				height: 100vh;
+				background-image: url("./Assets/homepage-iStock-467434437.jpg");
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				padding: 0 1rem;
+			}
+
+			.hero-text-block.scroll-in {
+	margin-top: auto;
+	margin-bottom: 12vh; /* adjust as needed */
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+
+			.scroll-in.visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			.hero-name {
+				font-size: clamp(2rem, 5vw, 3.5rem);
+				font-weight: 700;
+				letter-spacing: 2px;
+				text-transform: uppercase;
+				color: white;
+				text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+				margin-bottom: 1rem;
+			}
+
+			.tagline {
+				font-size: 1.2rem;
+				font-weight: 400;
+			}
+			/* ========== MOBILE NAVIGATION =========== */
+			.mobile-nav-bar {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				background-color: black;
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				padding: 1.5rem;
+				z-index: 1000;
+				background-color: transparent;
+			}
+			.hamburger {
+				position: relative;
+				width: 30px;
+				height: 18px;
+				cursor: pointer;
+				z-index: 1001;
+			}
+			.hamburger span {
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background-color: white;
+				border-radius: 1px;
+				transition: all 0.3s ease;
+			}
+
+			.hamburger span:nth-child(1) {
+				top: 0;
+			}
+			.hamburger span:nth-child(2) {
+				top: 8px;
+			}
+			.hamburger span:nth-child(3) {
+				top: 16px;
+			}
+
+			.hamburger.active span:nth-child(1) {
+				transform: rotate(30deg);
+				top: 8px;
+			}
+
+			.hamburger.active span:nth-child(2) {
+				opacity: 0;
+			}
+
+			.hamburger.active span:nth-child(3) {
+				transform: rotate(-30deg);
+				top: 8px;
+			}
+
+			/* ========== MOBILE NAV MENU=========== */
+
+			.mobile-nav {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				flex-direction: column;
+				padding: 5rem 1.5rem 2rem;
+				justify-content: flex-start;
+				align-items: flex-start;
+				z-index: 998;
+				backdrop-filter: blur(4px);
+				-webkit-backdrop-filter: blur(4px);
+				transform: translateX(-100%);
+				opacity: 0;
+				pointer-events: none;
+				transition: transform 1s ease, opacity 1s ease;
+			}
+
+			.mobile-nav.open {
+				transform: translateX(0);
+				opacity: 1;
+				pointer-events: auto;
+			}
+
+			.mobile-nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			.mobile-nav li {
+				margin-bottom: 1.5rem;
+			}
+
+			.mobile-nav li a {
+				color: white;
+				text-decoration: none;
+				font-size: 1.2rem;
+				font-weight: 500;
+				position: relative;
+				padding-bottom: 4px;
+				display: inline-block;
+				transition: color 0.3s ease;
+			}
+
+			.mobile-nav li a::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 0%;
+				height: 1px;
+				background-color: white;
+				transition: width 0.3s ease;
+			}
+
+			.mobile-nav li a:hover::after {
+				width: 100%;
+			}
+
+			.mobile-nav-links {
+				opacity: 0;
+				transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+			}
+
+			.mobile-nav.open .mobile-nav-links {
+				opacity: 1;
+				transform: translateY(0);
+			}
+			/* ========== DESKTOP NAV =========== */
+
+			.desktop-nav {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 64px;
+				justify-content: center;
+				z-index: 1000;
+			}
+			.desktop-nav-inner {
+				height: 64px;
+				max-width: 1440px;
+				background-color: black;
+				margin: 0 auto;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			body.home .desktop-nav-inner {
+				background-color: transparent;
+			}
+			.desktop-nav ul {
+				display: flex;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				gap: 3rem;
+				justify-content: center;
+			}
+			.desktop-nav li a {
+				color: white;
+				text-decoration: none;
+				font-size: 1rem;
+				font-weight: 500;
+				position: relative;
+				padding-bottom: 4px;
+				transition: color 0.3s ease;
+			}
+			.desktop-nav li a:hover::after {
+				width: 100%;
+			}
+			/* ========== MEDIA QUERIES =========== */
+
+			@media (min-width: 769px) {
+				.mobile-nav,
+				.mobile-nav-bar,
+				.hamburger {
+					display: none;
+				}
+			}
+
+			@media (max-width: 768px) {
+				.desktop-nav {
+					display: none;
+				}
+			}
+		</style>
 	</head>
 
 	<body class="home">
+		<!-- ======= MOBILE NAV 'toggle' -->
 		<div class="mobile-nav-bar">
 			<div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
 				<span></span>
@@ -24,6 +282,7 @@
 			</div>
 		</div>
 
+		<!-- ======= MOBILE NAV  ============= -->
 		<nav class="mobile-nav" id="mobileNav">
 			<ul class="mobile-nav-links">
 				<li><a href="index.html">HOME</a></li>
@@ -35,27 +294,33 @@
 			</ul>
 		</nav>
 
-		<div class="content-container">
-			<nav class="desktop-nav">
-				<div class="desktop-nav-inner">
-					<ul>
-						<li><a href="index.html">HOME</a></li>
-						<li><a href="about.html">ABOUT</a></li>
-						<li><a href="media.html">MEDIA</a></li>
-						<li><a href="engagements.html">ENGAGEMENTS</a></li>
-						<li><a href="repertoire.html">REPERTOIRE</a></li>
-						<li><a href="contact.html">CONTACT</a></li>
-					</ul>
-				</div>
-			</nav>
-			<div class="content-container">
-				<div class="hero-image home-hero">
-					<div class="hero-text-block scroll-in">
-						<h1 class="hero-name">Madison Hammel</h1>
-						<div class="tagline">An Artist in Bloom, One Aria at a Time</div>
-					</div>
-				</div>
+		<!-- <div class="content-container">
+			 -->
+
+		<!-- ======= DESKTOP NAV  ============= -->
+		<nav class="desktop-nav">
+			<div class="desktop-nav-inner">
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="media.html">MEDIA</a></li>
+					<li><a href="engagements.html">ENGAGEMENTS</a></li>
+					<li><a href="repertoire.html">REPERTOIRE</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				</ul>
 			</div>
+		</nav>
+		<!--  -->
+		<!-- <div class="content-container"> -->
+
+		<!-- ======= HERO IMAGE + Text  ============= -->
+		<div class="hero-image home-hero">
+			<div class="hero-text-block scroll-in">
+			<h1 class="hero-name">Madison Hammel</h1> 
+			<div class="tagline">An Artist in Bloom, One Aria at a Time</div>
+		</div>
+		<!-- </div>  -->
+		<!-- </div>
 			<div class="footer-hover-zone">
 				<div class="site-footer-inner">
 					<footer class="site-footer">
@@ -63,7 +328,43 @@
 					</footer>
 				</div>
 			</div>
-		</div>
-		<script src="./JS/script.js"></script>
+		 </div> -->
+		<script>
+			// =====  HAMBURGER ANIMATION ===== //
+			function toggleMobileNav() {
+				const hamburger = document.getElementById("hamburger");
+				const mobileNav = document.getElementById("mobileNav");
+
+				hamburger.classList.toggle("active");
+				mobileNav.classList.toggle("open");
+			}
+
+			// <!-- ======= SCROLL-IN   ============= -->
+			document.addEventListener("DOMContentLoaded", function () {
+				const textBlock = document.querySelector(".scroll-in");
+
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add("visible");
+
+								// ✅ Add 'mobile' class at the same time as 'visible'
+								if (window.innerWidth <= 768) {
+									entry.target.classList.add("mobile");
+								}
+							}
+						});
+					},
+					{
+						threshold: 0.1,
+					}
+				);
+
+				if (textBlock) {
+					observer.observe(textBlock);
+				}
+			});
+		</script>
 	</body>
 </html>
