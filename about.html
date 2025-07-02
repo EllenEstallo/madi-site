@@ -241,7 +241,7 @@
 			.about-content {
 				width: 1050px;
 				/* height: 600px; */
-				background-color: red;
+				/* background-color: red; */
 				margin-top: 64px;
 				/* display: flex; */
 				/* flex-direction: column; */
@@ -257,7 +257,11 @@
 				/* change to center if needed */
 				/* box-sizing: border-box; */
 			}
-			.about-layout {display: flex; align-items: flex-start;}
+			.about-layout {
+				display: flex;
+				align-items: flex-start;
+				padding-top: 2rem;
+			}
 
 			/* .about-content h1 {
 				font-size: 3rem;
@@ -269,12 +273,32 @@
 				max-width: 100%;
 				height: auto;
 			}
-			.about-layout p {
-	flex: 1;                     /* makes the paragraph grow to fill available space */
-	font-size: 1.125rem;
-	line-height: 1.6;
-	margin: 0;
-}
+			.about-layout .bio-text {
+				flex: 1; /* allows it to take up remaining space */
+				/* padding-top: 1.5rem; */
+			}
+			.about-content h1,
+			.about-content h2 {
+				text-align: center;
+				line-height: 1.2;
+				margin: 0;
+				font-size: clamp(1.75rem, 4vw, 2.5rem);
+			}
+
+			.about-content h2 {
+				font-size: clamp(1rem, 2.5vw, 1.5rem);
+				/* line-height: 0; */
+			}
+
+			.bio-text p {
+				margin-top: 0;
+				padding-top: 0;
+				font-size: 1.125rem;
+				line-height: 1.6;
+				padding-left: 1.5rem;
+				padding-right: 1.5rem;
+			}
+
 			/* border-radius: 10px; */
 			/* margin: 0 2rem 1.5rem 0; *
 				float: left;
@@ -301,7 +325,7 @@
 					/* padding: 0.5rem 1.25rem; */
 				}
 				.about-content {
-					margin-top: -50px;
+					margin-top: 0px;
 					z-index: 1;
 
 					/* padding: 3rem 0; */
@@ -310,46 +334,62 @@
 					line-height: 1.5;
 					padding: 0; */
 				}
-				/* .headshot { */
-				/* float: none; *
+				.about-content h1,
+				.about-content h2 {
+					display: none;
+				}
+			}
+
+			/* .headshot { */
+			/* float: none; *
 				display: block;
 				width: 100%;
 				max-width: 500px;
 				/* margin: 0; centers the image with vertical spacing */
-				/* }
+			/* }
 				/* .about-content h1 {
 					text-align: center;
 					font-size: 2rem;
 				} */
-				/* .about-content {
+			/* .about-content {
 					/* padding: 0 1rem; */
-				/* font-size: 1rem; *
+			/* font-size: 1rem; *
 					box-sizing: border-box;
 				/* } */
-			}
 
 			@media (max-width: 768px) {
-	.about-layout {
-		flex-direction: column;    /* stacks items vertically */
-		align-items: center;
-		text-align: left;
-	}
+				.about-layout {
+					flex-direction: column; /* stacks items vertically */
+					align-items: center;
+					text-align: left;
+				}
 
-	.headshot {
-		width: 100%;
-		max-width: 300px;
-		/* margin-bottom: 1.5rem; */
-	}
+				.headshot {
+					width: 100%;
+					max-width: 300px;
+					/* margin-bottom: 1.5rem; */
+				}
 
-	.about-layout p {
-		text-align: left;
-	}
-}
+				.about-layout p {
+					text-align: left;
+				}
+				.bio-text {
+					margin-top: 100px;
+				}
+				.bio-text h1,
+				.bio-text h2 {
+					display: block;
+				}
+			}
 
 			@media (min-width: 769px) {
 				.mobile-nav,
 				.mobile-nav-bar,
 				.hamburger {
+					display: none;
+				}
+				.bio-text h1,
+				.bio-text h2 {
 					display: none;
 				}
 			}
@@ -403,78 +443,63 @@
 		</div>
 
 		<!-- ======= MAIN CONTENT ======= -->
-		<div? class="content-container">
+		<div class="content-container">
 			<section class="about-content">
-				<div class="about-layout"> 
+				<h1>Madison Renee Hammel</h1>
+				<h2>Soprano</h2>
+				<div class="about-layout">
 					<img
 						src="./Assets/Madison-headshot.jpg"
 						alt="Madison headshot"
 						class="headshot"
 					/>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-						expedita numquam corrupti optio porro quaerat esse, quod in incidunt
-						alias enim molestias reiciendis labore exercitationem libero vel dolor
-						quas non?
-					</p>
+					<div class="bio-text">
+						<h1>Madison Renee Hammel</h1>
+						<h2>Soprano</h2>
+						<p>
+							Madison Renee Hammel, Soprano, is a 2024 graduate of Oberlin
+							College and Conservatory, earning her Bachelor of Music (Vocal
+							Performance, studying under Professor Kendra Colton) and Bachelor
+							of Arts in Psychology.
+						</p>
+						<p>
+							She performed with the Oberlin Chamber Singers and most recently
+							sang the roles of Eurydice & La Musica in Monteverdi’s
+							<em>L’Orfeo</em> and Ms. Wordsworth in Britten’s
+							<em>Albert Herring</em> with the Oberlin Opera Theater.
+						</p>
+						<p>
+							She currently serves with the ArtistYear program as an AmeriCorps
+							Resident Teaching Fellow at C.C.A. Baldi Middle School, where she
+							supports Theater and Music classes and recently helped mount the
+							school’s first musical production, <em>Moana Jr.</em>
+						</p>
+						<p>
+							Madison has performed in international choral festivals, including
+							Alta Pusteria, Idaho, and Montana International Choral Festivals.
+							She has also sung at Carnegie Hall, Thomaskirche in Leipzig,
+							Tanglewood, the Kimmel Center, and the Academy of Music with the
+							Pennsylvania Ballet.
+						</p>
+						<p>
+							Originally from Haddonfield, NJ, she graduated with honors from
+							Haddonfield Memorial High School. She studied under Ms. Kristine
+							Biller, sang with ChildrenSong of NJ under Ms. Polly Murray, and
+							studied at Manhattan School of Music Pre-College with Ms. Jeanai
+							La Vita.
+						</p>
+						<p>
+							Madison serves as a Cantor for parishes in the greater
+							Philadelphia area, including Christ the King (Haddonfield, NJ),
+							Saint James the Lesser (Jamesburg, NJ), and Queenship of Mary
+							(Plainsboro, NJ). She is also an avid tennis player and dedicated
+							home baker.
+						</p>
+					</div>
 				</div>
 			</section>
 		</div>
-		<!-- <p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-					aliquid odio quia nesciunt quae, eius iste. Voluptatibus quos, maiores
-					officiis dolorum deleniti, fugiat delectus repudiandae neque expedita
-					dolores totam magnam.
-				</p> -
-				<img
-					src="./Assets/Madison-headshot.jpg"
-					alt="Madison Renee Hammel Headshot"
-					class="headshot"
-				/>
-				<h1>Madison Renee Hammel, Soprano</h1>
-				<p>
-					Madison Renee Hammel, Soprano, is a 2024 graduate of Oberlin College
-					and Conservatory, earning her Bachelor of Music (Vocal Performance,
-					studying under Professor Kendra Colton) and Bachelor of Arts in
-					Psychology.
-				</p>
-				<p>
-					She performed with the Oberlin Chamber Singers and most recently sang
-					the roles of Eurydice & La Musica in Monteverdi’s <em>L’Orfeo</em> and
-					Ms. Wordsworth in Britten’s <em>Albert Herring</em> with the Oberlin
-					Opera Theater.
-				</p>
-				<p>
-					She currently serves with the ArtistYear program as an AmeriCorps
-					Resident Teaching Fellow at C.C.A. Baldi Middle School, where she
-					supports Theater and Music classes and recently helped mount the
-					school’s first musical production, <em>Moana Jr.</em>
-				</p>
-				<p>
-					Madison has performed in international choral festivals, including
-					Alta Pusteria, Idaho, and Montana International Choral Festivals. She
-					has also sung at Carnegie Hall, Thomaskirche in Leipzig, Tanglewood,
-					the Kimmel Center, and the Academy of Music with the Pennsylvania
-					Ballet.
-				</p>
-				<p>
-					Originally from Haddonfield, NJ, she graduated with honors from
-					Haddonfield Memorial High School. She studied under Ms. Kristine
-					Biller, sang with ChildrenSong of NJ under Ms. Polly Murray, and
-					studied at Manhattan School of Music Pre-College with Ms. Jeanai La
-					Vita.
-				</p>
-				<p>
-					Madison serves as a Cantor for parishes in the greater Philadelphia
-					area, including Christ the King (Haddonfield, NJ), Saint James the
-					Lesser (Jamesburg, NJ), and Queenship of Mary (Plainsboro, NJ). She is
-					also an avid tennis player and dedicated home baker.
-				</p>
-			</section>
-			a -->
-		<!-- </div> -->
-
-		<!-- ======= JS TOGGLE FOR MOBILE NAV ======= -->
+		<!--  ======= JS TOGGLE FOR MOBILE NAV ======= -->
 		<script>
 			function toggleMobileNav() {
 				const hamburger = document.getElementById("hamburger");
