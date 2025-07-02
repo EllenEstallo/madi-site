@@ -21,27 +21,64 @@
 				overflow-y: auto;
 				min-height: 100vh;
 				width: 100vw;
+
+				display: flex;
+				justify-content: center; /* center horizontally */
+				align-items: flex-start; /* align to the top vertically */
 			}
 
-			/* .content-container {
-						/* width: 100%; *
-						max-width: 1000px;
-						height: 1000px;
-						background-color: red;
-					} */
+			.content-container {
+				/* width: 100%; */
+				max-width: 1000px;
+				height: 1000px;
+				background-color: red;
+			}
 			/* margin: 0 auto;
-					/* padding: 0 1rem; *
-						background-color: white;
-						color: black;
-						/* margin-top: 2rem; *
-						margin: 0;
-						padding: 0;
-						display: flex;
-						justify-content: center;
-						align-items: flex-start;
-					} */
+			/* padding: 0 1rem; *
+				background-color: white;
+				color: black;
+				/* margin-top: 2rem; *
+				margin: 0;
+				padding: 0;
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+			} */
 
 			/* ======= BANNER WITH FULL IMAGE CONTAINED ======= */
+
+			.banner-wrapper {
+				position: relative; /* allows absolute positioning inside */
+				width: 100%;
+				min-height: 400px;
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+				margin-top: 64px; /* offset for fixed nav */
+				background-color: black;
+				overflow: hidden;
+			}
+
+			.banner-image {
+				max-height: 600px;
+				object-fit: contain;
+				display: block;
+				width: 100%;
+			}
+			.banner-text {
+				position: absolute;
+				bottom: 12rem;
+				left: 50%;
+				transform: translateX(-50%);
+				color: white;
+				font-size: 4rem;
+				font-weight: 600;
+				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+				/* background-color: rgba(0, 0, 0, 0.4); */
+				/* padding: 0.5rem 1.5rem; */
+				/* border-radius: 8px; */
+				white-space: nowrap;
+			}
 
 			/* ======= DESKTOP NAV ======= */
 			.desktop-nav {
@@ -222,52 +259,8 @@
 				opacity: 1;
 				transform: translateY(0);
 			}
-			/* ======= BANNER  ======= */
 
-			.banner-wrapper {
-				position: relative; /* allows absolute positioning inside */
-				width: 100%;
-				min-height: 400px;
-				display: flex;
-				justify-content: center;
-				align-items: flex-start;
-				margin-top: 64px; /* offset for fixed nav */
-				background-color: black;
-				overflow: hidden;
-			}
-
-			.banner-image {
-				max-height: 600px;
-				object-fit: contain;
-				display: block;
-				width: 100%;
-			}
-			.banner-text {
-				position: absolute;
-				bottom: 12rem;
-				left: 50%;
-				transform: translateX(-50%);
-				color: white;
-				font-size: 4rem;
-				font-weight: 600;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-				/* background-color: rgba(0, 0, 0, 0.4); */
-				/* padding: 0.5rem 1.5rem; */
-				/* border-radius: 8px; */
-				white-space: nowrap;
-			}
-			/* ===== CONTENT CONTAINER =====*/
-			.content-container {
-				display: flex;
-				justify-content: center;
-				align-items: flex-start;
-			}
-			/* .content-container {
-						/* width: 100%; *
-						max-width: 1000px;
-						height: 1000px;
-						background-color: red;
-					/* ====== ABOUT CONTENT ====== */
+			/* ====== ABOUT CONTENT ====== */
 			/* .about-content { */
 			/* padding: 3rem 0; */
 			/* overflow: hidden; */
@@ -276,9 +269,6 @@
 			/* } */
 			.about-content {
 				width: 600px;
-				height: 600px;
-				background-color: red;
-				margin-top: 10rem;
 				/* display: block; */
 				/* margin: 0 auto; */
 				/* padding: 3rem 0; */
@@ -312,15 +302,9 @@
 				.desktop-nav {
 					display: none;
 				}
-				.banner-wrapper {
-					align-items: flex-start; /* top-align content */
-				}
-
 				.banner-image {
-					align-self: flex-start; /* make sure the image starts at the top */
-					object-fit: cover; /* or 'contain' if you want full visibility */
-					height: auto; /* ensures it adjusts to content */
-					max-height: 450px;
+					height: 450px; /* taller banner on mobile */
+					object-fit: contain;
 				}
 				.banner-text {
 					font-size: 2.2rem;
@@ -409,14 +393,13 @@
 
 		<!-- ======= MAIN CONTENT ======= -->
 		<div class="content-container">
-			<section class="about-content"></section>
-		</div>
-		<!-- <p>
+			<!-- <section class="about-content">
+				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
 					aliquid odio quia nesciunt quae, eius iste. Voluptatibus quos, maiores
 					officiis dolorum deleniti, fugiat delectus repudiandae neque expedita
 					dolores totam magnam.
-				</p> -
+				</p>
 				<img
 					src="./Assets/Madison-headshot.jpg"
 					alt="Madison Renee Hammel Headshot"
@@ -463,7 +446,7 @@
 				</p>
 			</section>
 			a -->
-		<!-- </div> -->
+		</div>
 
 		<!-- ======= JS TOGGLE FOR MOBILE NAV ======= -->
 		<script>
