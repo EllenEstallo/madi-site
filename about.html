@@ -270,6 +270,7 @@
 			.bio-content .h1,
 			.bio-content .h2 {
 				display: none;
+				line-height: 2;
 			}
 
 			.bio-content p {
@@ -279,10 +280,6 @@
 				line-height: 1.6;
 				padding-left: 1.5rem;
 				padding-right: 1.5rem;
-			}
-
-			/* border-radius: 10px;
-				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 			}
 
 			/* ======= MEDIA QUERIES ======= */
@@ -304,11 +301,16 @@
 					font-size: 2.2rem;
 					/* padding: 0.5rem 1.25rem; */
 				}
+
 				.about-content h1,
 				.about-content h2 {
 					display: none;
 				}
 				.about-layout {
+					flex-direction: column; /* stacks items vertically */
+					align-items: center;
+					text-align: left;
+
 					margin-top: -90px;
 					z-index: 1;
 				}
@@ -319,16 +321,10 @@
 				.bio-content .h1,
 				.bio-content .h2 {
 					display: block;
+					line-height: 2;
 				}
-			}
-
-			/* box-sizing: border-box; */
-
-			@media (max-width: 768px) {
-				.about-layout {
-					flex-direction: column; /* stacks items vertically */
-					align-items: center;
-					text-align: left;
+				.bio-text {
+					padding-top: 4rem;
 				}
 
 				.headshot {
@@ -422,45 +418,48 @@
 					<div class="bio-content">
 						<h1>Madison Renee Hammel</h1>
 						<h2>Soprano</h2>
-						<p>
-							Madison Renee Hammel, Soprano, is a 2024 graduate of Oberlin
-							College and Conservatory, earning her Bachelor of Music (Vocal
-							Performance, studying under Professor Kendra Colton) and Bachelor
-							of Arts in Psychology.
-						</p>
-						<p>
-							She performed with the Oberlin Chamber Singers and most recently
-							sang the roles of Eurydice & La Musica in Monteverdi’s
-							<em>L’Orfeo</em> and Ms. Wordsworth in Britten’s
-							<em>Albert Herring</em> with the Oberlin Opera Theater.
-						</p>
-						<p>
-							She currently serves with the ArtistYear program as an AmeriCorps
-							Resident Teaching Fellow at C.C.A. Baldi Middle School, where she
-							supports Theater and Music classes and recently helped mount the
-							school’s first musical production, <em>Moana Jr.</em>
-						</p>
-						<p>
-							Madison has performed in international choral festivals, including
-							Alta Pusteria, Idaho, and Montana International Choral Festivals.
-							She has also sung at Carnegie Hall, Thomaskirche in Leipzig,
-							Tanglewood, the Kimmel Center, and the Academy of Music with the
-							Pennsylvania Ballet.
-						</p>
-						<p>
-							Originally from Haddonfield, NJ, she graduated with honors from
-							Haddonfield Memorial High School. She studied under Ms. Kristine
-							Biller, sang with ChildrenSong of NJ under Ms. Polly Murray, and
-							studied at Manhattan School of Music Pre-College with Ms. Jeanai
-							La Vita.
-						</p>
-						<p>
-							Madison serves as a Cantor for parishes in the greater
-							Philadelphia area, including Christ the King (Haddonfield, NJ),
-							Saint James the Lesser (Jamesburg, NJ), and Queenship of Mary
-							(Plainsboro, NJ). She is also an avid tennis player and dedicated
-							home baker.
-						</p>
+						<div class="bio-text">
+							<p>
+								Madison Renee Hammel, Soprano, is a 2024 graduate of Oberlin
+								College and Conservatory, earning her Bachelor of Music (Vocal
+								Performance, studying under Professor Kendra Colton) and
+								Bachelor of Arts in Psychology.
+							</p>
+							<p>
+								She performed with the Oberlin Chamber Singers and most recently
+								sang the roles of Eurydice & La Musica in Monteverdi’s
+								<em>L’Orfeo</em> and Ms. Wordsworth in Britten’s
+								<em>Albert Herring</em> with the Oberlin Opera Theater.
+							</p>
+							<p>
+								She currently serves with the ArtistYear program as an
+								AmeriCorps Resident Teaching Fellow at C.C.A. Baldi Middle
+								School, where she supports Theater and Music classes and
+								recently helped mount the school’s first musical production,
+								<em>Moana Jr.</em>
+							</p>
+							<p>
+								Madison has performed in international choral festivals,
+								including Alta Pusteria, Idaho, and Montana International Choral
+								Festivals. She has also sung at Carnegie Hall, Thomaskirche in
+								Leipzig, Tanglewood, the Kimmel Center, and the Academy of Music
+								with the Pennsylvania Ballet.
+							</p>
+							<p>
+								Originally from Haddonfield, NJ, she graduated with honors from
+								Haddonfield Memorial High School. She studied under Ms. Kristine
+								Biller, sang with ChildrenSong of NJ under Ms. Polly Murray, and
+								studied at Manhattan School of Music Pre-College with Ms. Jeanai
+								La Vita.
+							</p>
+							<p>
+								Madison serves as a Cantor for parishes in the greater
+								Philadelphia area, including Christ the King (Haddonfield, NJ),
+								Saint James the Lesser (Jamesburg, NJ), and Queenship of Mary
+								(Plainsboro, NJ). She is also an avid tennis player and
+								dedicated home baker.
+							</p>
+						</div>
 					</div>
 				</div>
 			</section>
