@@ -23,26 +23,6 @@
 				width: 100vw;
 			}
 
-			/* .content-container {
-						/* width: 100%; *
-						max-width: 1000px;
-						height: 1000px;
-						background-color: red;
-					} */
-			/* margin: 0 auto;
-					/* padding: 0 1rem; *
-						background-color: white;
-						color: black;
-						/* margin-top: 2rem; *
-						margin: 0;
-						padding: 0;
-						display: flex;
-						justify-content: center;
-						align-items: flex-start;
-					} */
-
-			/* ======= BANNER WITH FULL IMAGE CONTAINED ======= */
-
 			/* ======= DESKTOP NAV ======= */
 			.desktop-nav {
 				position: fixed;
@@ -227,7 +207,7 @@
 			.banner-wrapper {
 				position: relative; /* allows absolute positioning inside */
 				width: 100%;
-				min-height: 400px;
+				height: 400px;
 				display: flex;
 				justify-content: center;
 				align-items: flex-start;
@@ -237,23 +217,18 @@
 			}
 
 			.banner-image {
-				max-height: 600px;
 				object-fit: contain;
-				display: block;
 				width: 100%;
 			}
 			.banner-text {
 				position: absolute;
-				bottom: 12rem;
+				bottom: 5rem;
 				left: 50%;
 				transform: translateX(-50%);
 				color: white;
 				font-size: 4rem;
 				font-weight: 600;
 				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-				/* background-color: rgba(0, 0, 0, 0.4); */
-				/* padding: 0.5rem 1.5rem; */
-				/* border-radius: 8px; */
 				white-space: nowrap;
 			}
 			/* ===== CONTENT CONTAINER =====*/
@@ -262,23 +237,14 @@
 				justify-content: center;
 				align-items: flex-start;
 			}
-			/* .content-container {
-						/* width: 100%; *
-						max-width: 1000px;
-						height: 1000px;
-						background-color: red;
-					/* ====== ABOUT CONTENT ====== */
-			/* .about-content { */
-			/* padding: 3rem 0; */
-			/* overflow: hidden; */
-			/* font-size: 1.25rem; */
-			/* line-height: 1.5; */
-			/* } */
+
 			.about-content {
-				width: 600px;
-				height: 600px;
+				width: 1050px;
+				/* height: 600px; */
 				background-color: red;
-				margin-top: 10rem;
+				margin-top: 64px;
+				/* display: flex; */
+				/* flex-direction: column; */
 				/* display: block; */
 				/* margin: 0 auto; */
 				/* padding: 3rem 0; */
@@ -291,18 +257,26 @@
 				/* change to center if needed */
 				/* box-sizing: border-box; */
 			}
+			.about-layout {display: flex; align-items: flex-start;}
 
-			.about-content h1 {
+			/* .about-content h1 {
 				font-size: 3rem;
-				/* margin-bottom: 1.5rem; */
-			}
+				/* margin-bottom: 1.5rem; *
+			} */
 
-			.headshot {
+			.about-layout .headshot {
 				width: 400px;
 				max-width: 100%;
 				height: auto;
-				border-radius: 10px;
-				/* margin: 0 2rem 1.5rem 0; */
+			}
+			.about-layout p {
+	flex: 1;                     /* makes the paragraph grow to fill available space */
+	font-size: 1.125rem;
+	line-height: 1.6;
+	margin: 0;
+}
+			/* border-radius: 10px; */
+			/* margin: 0 2rem 1.5rem 0; *
 				float: left;
 				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 			}
@@ -327,29 +301,50 @@
 					/* padding: 0.5rem 1.25rem; */
 				}
 				.about-content {
+					margin-top: -50px;
+					z-index: 1;
+
 					/* padding: 3rem 0; */
-					overflow: hidden;
+					/* overflow: hidden;
 					font-size: 1.25rem;
 					line-height: 1.5;
-					padding: 0;
+					padding: 0; */
 				}
-				.headshot {
-					float: none;
-					display: block;
-					width: 100%;
-					max-width: 500px;
-					margin: 0; /* centers the image with vertical spacing */
-				}
-				.about-content h1 {
+				/* .headshot { */
+				/* float: none; *
+				display: block;
+				width: 100%;
+				max-width: 500px;
+				/* margin: 0; centers the image with vertical spacing */
+				/* }
+				/* .about-content h1 {
 					text-align: center;
 					font-size: 2rem;
-				}
-				.about-content {
+				} */
+				/* .about-content {
 					/* padding: 0 1rem; */
-					/* font-size: 1rem; */
+				/* font-size: 1rem; *
 					box-sizing: border-box;
-				}
+				/* } */
 			}
+
+			@media (max-width: 768px) {
+	.about-layout {
+		flex-direction: column;    /* stacks items vertically */
+		align-items: center;
+		text-align: left;
+	}
+
+	.headshot {
+		width: 100%;
+		max-width: 300px;
+		/* margin-bottom: 1.5rem; */
+	}
+
+	.about-layout p {
+		text-align: left;
+	}
+}
 
 			@media (min-width: 769px) {
 				.mobile-nav,
@@ -408,8 +403,22 @@
 		</div>
 
 		<!-- ======= MAIN CONTENT ======= -->
-		<div class="content-container">
-			<section class="about-content"></section>
+		<div? class="content-container">
+			<section class="about-content">
+				<div class="about-layout"> 
+					<img
+						src="./Assets/Madison-headshot.jpg"
+						alt="Madison headshot"
+						class="headshot"
+					/>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+						expedita numquam corrupti optio porro quaerat esse, quod in incidunt
+						alias enim molestias reiciendis labore exercitationem libero vel dolor
+						quas non?
+					</p>
+				</div>
+			</section>
 		</div>
 		<!-- <p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
