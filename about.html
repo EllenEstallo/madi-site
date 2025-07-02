@@ -240,57 +240,39 @@
 
 			.about-content {
 				width: 1050px;
-				/* height: 600px; */
-				/* background-color: red; */
 				margin-top: 64px;
-				/* display: flex; */
-				/* flex-direction: column; */
-				/* display: block; */
-				/* margin: 0 auto; */
-				/* padding: 3rem 0; */
-				/* font-size: 1.25rem; */
-				/* line-height: 1.5; */
-				/* word-wrap: break-word; */
-				/* overflow-wrap: break-word; */
-				/* white-space: normal; */
-				/* text-align: left;  */
-				/* change to center if needed */
-				/* box-sizing: border-box; */
-			}
-			.about-layout {
-				display: flex;
-				align-items: flex-start;
-				padding-top: 2rem;
-			}
-
-			/* .about-content h1 {
-				font-size: 3rem;
-				/* margin-bottom: 1.5rem; *
-			} */
-
-			.about-layout .headshot {
-				width: 400px;
-				max-width: 100%;
-				height: auto;
-			}
-			.about-layout .bio-text {
-				flex: 1; /* allows it to take up remaining space */
-				/* padding-top: 1.5rem; */
 			}
 			.about-content h1,
 			.about-content h2 {
 				text-align: center;
 				line-height: 1.2;
 				margin: 0;
-				font-size: clamp(1.75rem, 4vw, 2.5rem);
+				font-size: clamp(1.75rem, 4vw, 3.5rem);
 			}
-
 			.about-content h2 {
-				font-size: clamp(1rem, 2.5vw, 1.5rem);
+				font-size: clamp(1.5rem, 2.5vw, 3rem);
 				/* line-height: 0; */
 			}
+			.about-layout {
+				display: flex;
+				align-items: flex-start;
+				padding-top: 3rem;
+			}
 
-			.bio-text p {
+			.about-layout .headshot {
+				width: 400px;
+				max-width: 100%;
+				height: auto;
+			}
+			.about-layout .bio-content {
+				flex: 1; /* allows it to take up remaining space */
+			}
+			.bio-content .h1,
+			.bio-content .h2 {
+				display: none;
+			}
+
+			.bio-content p {
 				margin-top: 0;
 				padding-top: 0;
 				font-size: 1.125rem;
@@ -299,9 +281,7 @@
 				padding-right: 1.5rem;
 			}
 
-			/* border-radius: 10px; */
-			/* margin: 0 2rem 1.5rem 0; *
-				float: left;
+			/* border-radius: 10px;
 				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 			}
 
@@ -324,38 +304,25 @@
 					font-size: 2.2rem;
 					/* padding: 0.5rem 1.25rem; */
 				}
-				.about-content {
-					margin-top: 0px;
-					z-index: 1;
-
-					/* padding: 3rem 0; */
-					/* overflow: hidden;
-					font-size: 1.25rem;
-					line-height: 1.5;
-					padding: 0; */
-				}
 				.about-content h1,
 				.about-content h2 {
 					display: none;
 				}
+				.about-layout {
+					margin-top: -90px;
+					z-index: 1;
+				}
+				.about-content {
+					margin-top: 0px;
+					z-index: 1;
+				}
+				.bio-content .h1,
+				.bio-content .h2 {
+					display: block;
+				}
 			}
 
-			/* .headshot { */
-			/* float: none; *
-				display: block;
-				width: 100%;
-				max-width: 500px;
-				/* margin: 0; centers the image with vertical spacing */
-			/* }
-				/* .about-content h1 {
-					text-align: center;
-					font-size: 2rem;
-				} */
-			/* .about-content {
-					/* padding: 0 1rem; */
-			/* font-size: 1rem; *
-					box-sizing: border-box;
-				/* } */
+			/* box-sizing: border-box; */
 
 			@media (max-width: 768px) {
 				.about-layout {
@@ -367,17 +334,16 @@
 				.headshot {
 					width: 100%;
 					max-width: 300px;
-					/* margin-bottom: 1.5rem; */
 				}
 
-				.about-layout p {
+				/* .about-layout p {
 					text-align: left;
+				} */
+				.bio-content {
+					margin-top: 10px;
 				}
-				.bio-text {
-					margin-top: 100px;
-				}
-				.bio-text h1,
-				.bio-text h2 {
+				.bio-content h1,
+				.bio-content h2 {
 					display: block;
 				}
 			}
@@ -388,8 +354,8 @@
 				.hamburger {
 					display: none;
 				}
-				.bio-text h1,
-				.bio-text h2 {
+				.bio-content h1,
+				.bio-content h2 {
 					display: none;
 				}
 			}
@@ -453,7 +419,7 @@
 						alt="Madison headshot"
 						class="headshot"
 					/>
-					<div class="bio-text">
+					<div class="bio-content">
 						<h1>Madison Renee Hammel</h1>
 						<h2>Soprano</h2>
 						<p>
