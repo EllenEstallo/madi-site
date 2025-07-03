@@ -258,12 +258,46 @@
 				align-items: flex-start;
 				padding-top: 3rem;
 			}
-
-			.about-layout .headshot {
+			.headshot-and-presskit {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				/* /* padding-top: 3rem;  */
+			}
+			.headshot-and-presskit .headshot {
 				width: 400px;
 				max-width: 100%;
 				height: auto;
 			}
+			.headshot-and-presskit .download-button {
+				/* .bio-text .download-button { */
+				display: inline-block;
+				/* display: block; */
+				margin-top: 3rem;
+				padding: 0.75rem 1.5rem;
+				background-color: #333;
+				color: white;
+				text-decoration: none;
+				font-weight: 500;
+				border-radius: 5px;
+				transition: background-color 0.3s ease;
+				/* .headshot-and-presskit .download-button { */
+				/* text-align: center; */
+				/* align-self: center; */
+			}
+
+			.headshot-and-presskit .download-button {
+				display: block;
+			}
+			/* .bio-text .download-button {
+				display: none;
+			} */
+
+			.download-button:hover {
+				background-color: #555;
+			}
+
 			.about-layout .bio-content {
 				flex: 1; /* allows it to take up remaining space */
 			}
@@ -325,23 +359,45 @@
 				}
 				.bio-text {
 					padding-top: 4rem;
-				}
 
-				.headshot {
-					width: 100%;
-					max-width: 300px;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
 				}
+			}
+			/* .bio-text .download-button {
+				/* display: block;
+											
+				display: inline-block; /* fixes full-width issue *
+				margin-top: 2rem;
+				padding: 0.75rem 1.5rem;
+				background-color: #333;
+				color: white;
+				text-decoration: none;
+				font-weight: 500;
+				border-radius: 5px;
+				transition: background-color 0.3s ease;
+				align-self: center;
+			} */
 
-				/* .about-layout p {
-					text-align: left;
-				} */
-				.bio-content {
-					margin-top: 10px;
-				}
-				.bio-content h1,
-				.bio-content h2 {
-					display: block;
-				}
+			.headshot-and-presskit .download-button {
+				display: none;
+			}
+
+			.headshot {
+				width: 100%;
+				max-width: 300px;
+			}
+
+			/* .about-layout p {
+											text-align: left;
+										} */
+			.bio-content {
+				margin-top: 10px;
+			}
+			.bio-content h1,
+			.bio-content h2 {
+				display: block;
 			}
 
 			@media (min-width: 769px) {
@@ -350,6 +406,10 @@
 				.hamburger {
 					display: none;
 				}
+				.headshot-and-presskit .download-button {
+					display: block;
+				}
+
 				.bio-content h1,
 				.bio-content h2 {
 					display: none;
@@ -410,11 +470,16 @@
 				<h1>Madison Renee Hammel</h1>
 				<h2>Soprano</h2>
 				<div class="about-layout">
-					<img
-						src="./Assets/Madison-headshot.jpg"
-						alt="Madison headshot"
-						class="headshot"
-					/>
+					<div class="headshot-and-presskit">
+						<img
+							src="./Assets/Madison-headshot.jpg"
+							alt="Madison headshot"
+							class="headshot"
+						/>
+						<a href="/madi-site-press-kit.pdf" download class="download-button">
+							Download Press Kit
+						</a>
+					</div>
 					<div class="bio-content">
 						<h1>Madison Renee Hammel</h1>
 						<h2>Soprano</h2>
@@ -459,6 +524,13 @@
 								(Plainsboro, NJ). She is also an avid tennis player and
 								dedicated home baker.
 							</p>
+							<!-- <a
+								href="/madi-site-press-kit.pdf"
+								download
+								class="download-button"
+							>
+								Download Press Kit
+							</a> -->
 						</div>
 					</div>
 				</div>
