@@ -239,11 +239,12 @@
 				align-items: flex-start;
 			}
 			.about-content {
-				width: 100%;
-				max-width: 1050px;
 				padding: 0 1rem;
-				margin-top: 64px;
 				box-sizing: border-box;
+				margin-top: 64px;
+				width: 100%;
+				max-width: 1000px;
+				padding: 0 1rem;
 			}
 
 			.about-content h1,
@@ -255,25 +256,24 @@
 			}
 			.about-content h2 {
 				font-size: clamp(1.5rem, 2.5vw, 3rem);
-				/* line-height: 0; */
 			}
-			.about-layout {
+			/* .about-layout {
 				display: flex;
 				align-items: flex-start;
 				padding-top: 3rem;
-			}
-			.headshot-and-presskit {
+			} */
+			/* .headshot-and-presskit {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-			}
-			.headshot-and-presskit .headshot {
+			} */
+			/* .headshot-and-presskit .headshot {
 				width: 400px;
 				max-width: 100%;
 				height: auto;
-			}
-			.headshot-and-presskit .download-button,
+			} */
+			/* .headshot-and-presskit .download-button,
 			.bio-text .download-button {
 				display: inline-block;
 				margin-top: 3rem;
@@ -286,35 +286,100 @@
 				border-radius: 5px;
 				transition: background-color 0.3s ease;
 				display: none;
-			}
-
-			.download-button:hover {
+			} */
+			/* .download-button:hover {
 				background-color: #555;
-			}
-
+			} */
+			/* 
 			.about-layout .bio-content {
 				flex: 1; /* allows it to take up remaining space */
-			}
+			/* } 
 			.bio-content .h1,
 			.bio-content .h2 {
 				line-height: 2;
-			}
+			} */
 
-			.bio-text {
+			/* .bio-text {
 				display: block;
-			}
+			} */
 
-			.bio-text p {
+			/* .bio-text p {
 				margin-top: 0;
 				padding-top: 0;
 				font-size: 1.125rem;
 				line-height: 1.6;
 				padding-left: 1.5rem;
 				padding-right: 1.5rem;
-			}
-			.bio-text .download-button {
+			} */
+			/* .bio-text .download-button {
 				display: none;
+			} */
+
+			.video-grid {
+				display: grid;
+				grid-template-columns: repeat(
+					2,
+					minmax(0, 1fr)
+				); /* remove min width barrier */
+				column-gap: 1rem; /* smaller horizontal gap */
+				row-gap: 2rem;
+				justify-content: center;
+				justify-items: center;
+				max-width: 1200px;
+				margin: 2rem auto;
+				padding: 0 1rem;
 			}
+
+			.video-item {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+				width: 100%;
+				max-width: 6dvh;
+				/* background-color: #f5f5f5; */
+				padding: 1rem;
+				border-radius: 8px;
+			}
+			.video-grid video {
+				max-width: 600px;
+			}
+
+			.video-grid video {
+				width: 100%;
+				max-width: 600px; /* ✅ wider videos */
+				height: auto;
+				border-radius: 8px;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+			}
+
+			.video-caption {
+				margin-top: 0.5rem;
+				font-size: 0.95rem;
+				color: #666;
+				font-style: italic;
+				text-align: center;
+			}
+
+			/* MOBILE */
+			@media (max-width: 768px) {
+				.video-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+
+			/* === MOBILE (Stacked layout) === */
+			/* @media (max-width: 768px) {
+				.video-grid {
+					grid-template-columns: 1fr; /* 1 video per row */
+
+			/* MOBILE: 1 per row
+			@media (max-width: 768px) {
+				.video-grid {
+					grid-template-columns: 1fr;
+				}
+			} */
+
 			/* ======= FOOTER ======= */
 			.site-footer {
 				width: 100%;
@@ -338,7 +403,6 @@
 				.banner-wrapper {
 					align-items: flex-start; /* top-align content */
 				}
-
 				.banner-image {
 					align-self: flex-start; /* make sure the image starts at the top */
 					object-fit: cover; /* or 'contain' if you want full visibility */
@@ -348,35 +412,34 @@
 				.banner-text {
 					font-size: 2.2rem;
 				}
-
 				.about-content h1 {
 					margin-top: 40px;
 					/* font-size: clamp(1.75rem, 4vw, 3.5rem); */
 				}
-				.headshot {
+			}
+			/* .headshot {
 					width: 100%;
 					max-width: 300px;
-				}
-				.headshot-and-presskit .download-button {
+				} */
+			/* .headshot-and-presskit .download-button {
 					display: none;
-				}
-
-				.about-layout {
+				} */
+			/* .about-layout {
 					flex-direction: column; /* stacks items vertically */
-					align-items: center;
+			/* align-items: center;
 					text-align: left;
 
 					margin-top: -90px;
 					z-index: 1;
-				}
-				.about-content {
+				} */
+			/* .about-content {
 					margin-top: 0px;
 					z-index: 1;
-				}
-				.bio-content {
+				} */
+			/* .bio-content {
 					margin-top: 1rem;
-				}
-				.bio-content h1,
+				} */
+			/* .bio-content h1,
 				.bio-content h2 {
 					display: block;
 				}
@@ -393,9 +456,9 @@
 					margin-top: 2rem;
 					display: inline-block;
 				}
-			}
+			} */
 			/* MEDIA QUERIES (DESKTOP) */
-			@media (min-width: 769px) {
+			/* @media (min-width: 769px) {
 				.mobile-nav,
 				.mobile-nav-bar,
 				.hamburger {
@@ -410,7 +473,7 @@
 				.bio-text .download-button {
 					display: none;
 				}
-			}
+			} */
 		</style>
 	</head>
 
@@ -480,20 +543,144 @@
 				<br />
 				<h2>Full Performances</h2>
 				<br />
-				<div class="video-grid">
-					<video controls>
+				<!-- <div
+					class="video-item"
+					style="
+						width: 100%;
+						max-width: 400px;
+						padding: 1rem;
+						border-radius: 8px;
+					"
+				>
+					<video controls style="width: 100%; height: auto; display: block">
 						<source src="./Assets/videos/full-aria-1.mp4" type="video/mp4" />
 					</video>
-					<video controls>
-						<source src="./Assets/videos/full-aria-2.mp4" type="video/mp4" />
+					<p class="video-caption">"O mio babbino caro" – Puccini</p>
+				</div> -->
+
+				<!-- <div
+					class="video-item"
+					style="
+						width: 100%;
+						max-width: 400px;
+						padding: 1rem;
+						border-radius: 8px;
+					"
+				>
+					<video controls style="width: 100%; height: auto; display: block">
+						<source src="./Assets/videos/full-aria-1.mp4" type="video/mp4" />
 					</video>
-					<video controls>
-						<source src="./Assets/videos/full-aria-3.mp4" type="video/mp4" />
-					</video>
-					<video controls>
-						<source src="./Assets/videos/full-aria-4.mp4" type="video/mp4" />
-					</video>
+					<p class="video-caption">"O mio babbino caro" – Puccini</p>
+				</div> -->
+				<div
+					style="
+						display: flex;
+						justify-content: center;
+						gap: 2rem;
+						flex-wrap: wrap;
+						margin: 2rem auto;
+					"
+				>
+					<div
+						class="video-item"
+						style="
+							width: 100%;
+							max-width: 400px;
+							padding: 1rem;
+							border-radius: 8px;
+							background-color: #f5f5f5;
+						"
+					>
+						<video controls style="width: 100%; height: auto; display: block">
+							<source src="./Assets/videos/full-aria-1.mp4" type="video/mp4" />
+						</video>
+						<p class="video-caption">"O mio babbino caro" – Puccini</p>
+					</div>
+
+					<div
+						class="video-item"
+						style="
+							width: 100%;
+							max-width: 400px;
+							padding: 1rem;
+							border-radius: 8px;
+							background-color: #f5f5f5;
+						"
+					>
+						<video controls style="width: 100%; height: auto; display: block">
+							<source src="./Assets/videos/full-aria-2.mp4" type="video/mp4" />
+						</video>
+						<p class="video-caption">"Ach, ich fühl’s" – Mozart</p>
+					</div>
 				</div>
+				<div
+					style="
+						display: flex;
+						justify-content: center;
+						gap: 2rem;
+						flex-wrap: wrap;
+						margin: 2rem auto;
+					"
+				>
+					<div
+						class="video-item"
+						style="
+							width: 100%;
+							max-width: 400px;
+							padding: 1rem;
+							border-radius: 8px;
+							background-color: #f5f5f5;
+						"
+					>
+						<video controls style="width: 100%; height: auto; display: block">
+							<source src="./Assets/videos/full-aria-1.mp4" type="video/mp4" />
+						</video>
+						<p class="video-caption">"O mio babbino caro" – Puccini</p>
+					</div>
+
+					<div
+						class="video-item"
+						style="
+							width: 100%;
+							max-width: 400px;
+							padding: 1rem;
+							border-radius: 8px;
+							background-color: #f5f5f5;
+						"
+					>
+						<video controls style="width: 100%; height: auto; display: block">
+							<source src="./Assets/videos/full-aria-2.mp4" type="video/mp4" />
+						</video>
+						<p class="video-caption">"Ach, ich fühl’s" – Mozart</p>
+					</div>
+				</div>
+				<!-- <div class="video-grid">
+					<div class="video-item">
+						<video controls>
+							<source src="./Assets/videos/full-aria-1.mp4" type="video/mp4" />
+						</video>
+						<p class="video-caption">"O mio babbino caro" – Puccini</p>
+					</div>
+					<div class="video-item">
+						<video controls>
+							<source src="./Assets/videos/full-aria-2.mp4" type="video/mp4" />
+						</video>
+						<p class="video-caption">"Ach, ich fühl’s" – Mozart</p>
+					</div>
+					<div class="video-item">
+						<video controls>
+							<source src="./Assets/videos/full-aria-1.mp4" type="video/mp4" />
+						</video>
+						<p class="video-caption">"O mio babbino caro" – Puccini</p>
+					</div>
+					<div class="video-item">
+						<video controls>
+							<source src="./Assets/videos/full-aria-2.mp4" type="video/mp4" />
+						</video>
+						<p class="video-caption">"Ach, ich fühl’s" – Mozart</p>
+					</div>
+				</div> -->
+
 				<br />
 				<h1>PHOTOS</h1>
 				<br />
