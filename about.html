@@ -237,7 +237,6 @@
 				justify-content: center;
 				align-items: flex-start;
 			}
-
 			.about-content {
 				width: 1050px;
 				margin-top: 64px;
@@ -263,17 +262,16 @@
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				/* /* padding-top: 3rem;  */
 			}
 			.headshot-and-presskit .headshot {
 				width: 400px;
 				max-width: 100%;
 				height: auto;
 			}
-			.headshot-and-presskit .download-button {
-				/* .bio-text .download-button { */
+			.headshot-and-presskit .download-button
+			/* ,
+			.bio-text .download-button  */ {
 				display: inline-block;
-				/* display: block; */
 				margin-top: 3rem;
 				padding: 0.75rem 1.5rem;
 				background-color: #333;
@@ -282,14 +280,9 @@
 				font-weight: 500;
 				border-radius: 5px;
 				transition: background-color 0.3s ease;
-				/* .headshot-and-presskit .download-button { */
-				/* text-align: center; */
-				/* align-self: center; */
+				display: none;
 			}
 
-			.headshot-and-presskit .download-button {
-				display: block;
-			}
 			/* .bio-text .download-button {
 				display: none;
 			} */
@@ -303,20 +296,45 @@
 			}
 			.bio-content .h1,
 			.bio-content .h2 {
-				display: none;
+				/* display: none; */
 				line-height: 2;
 			}
 
-			.bio-content p {
+			.bio-text {
+				display: block;
+			}
+
+			.bio-text p {
 				margin-top: 0;
 				padding-top: 0;
 				font-size: 1.125rem;
 				line-height: 1.6;
 				padding-left: 1.5rem;
 				padding-right: 1.5rem;
+			} 
+
+			/* .bio-text .download-button {
+				display: inline-block;
+				margin-top: 3rem;
+				padding: 0.75rem 1.5rem;
+				background-color: #333;
+				color: white;
+				text-decoration: none;
+				font-weight: 500;
+				border-radius: 5px;
+				transition: background-color 0.3s ease;
+				display: none;
+			} */
+
+			.bio-text .download-button {
+				display: none;
 			}
 
-			/* ======= MEDIA QUERIES ======= */
+			.download-button:hover {
+				background-color: #555;
+			}
+
+			/* MEDIA QUERIES (MOBILE) */
 			@media (max-width: 768px) {
 				.desktop-nav {
 					display: none;
@@ -340,6 +358,25 @@
 				.about-content h2 {
 					display: none;
 				}
+				.headshot {
+					width: 100%;
+					max-width: 300px;
+				}
+				.headshot-and-presskit .download-button {
+					display: none;
+				}
+				/* .bio-text .download-button {
+					display: inline-block; */
+				/* margin-top: 3rem;
+				padding: 0.75rem 1.5rem;
+				background-color: #333;
+				color: white;
+				text-decoration: none;
+				font-weight: 500;
+				border-radius: 5px;
+				transition: background-color 0.3s ease;
+				display: none; */
+				/* } */
 				.about-layout {
 					flex-direction: column; /* stacks items vertically */
 					align-items: center;
@@ -352,8 +389,11 @@
 					margin-top: 0px;
 					z-index: 1;
 				}
-				.bio-content .h1,
-				.bio-content .h2 {
+				.bio-content {
+					margin-top: 10px;
+				}
+				.bio-content h1,
+				.bio-content h2 {
 					display: block;
 					line-height: 2;
 				}
@@ -363,43 +403,12 @@
 					display: flex;
 					flex-direction: column;
 					align-items: center;
-				}
-			}
-			/* .bio-text .download-button {
-				/* display: block;
-											
-				display: inline-block; /* fixes full-width issue *
-				margin-top: 2rem;
-				padding: 0.75rem 1.5rem;
-				background-color: #333;
-				color: white;
-				text-decoration: none;
-				font-weight: 500;
-				border-radius: 5px;
-				transition: background-color 0.3s ease;
-				align-self: center;
-			} */
+				 }
 
-			.headshot-and-presskit .download-button {
-				display: none;
+				
+				
 			}
-
-			.headshot {
-				width: 100%;
-				max-width: 300px;
-			}
-
-			/* .about-layout p {
-											text-align: left;
-										} */
-			.bio-content {
-				margin-top: 10px;
-			}
-			.bio-content h1,
-			.bio-content h2 {
-				display: block;
-			}
-
+			/* MEDIA QUERIES (DESKTOP) */
 			@media (min-width: 769px) {
 				.mobile-nav,
 				.mobile-nav-bar,
@@ -407,13 +416,25 @@
 					display: none;
 				}
 				.headshot-and-presskit .download-button {
-					display: block;
+					display: inline-block;
 				}
 
 				.bio-content h1,
 				.bio-content h2 {
 					display: none;
 				}
+				/* .bio-text .download-button {
+					display: none;
+					/* margin-top: 3rem; */
+				/* padding: 0.75rem 1.5rem;
+				background-color: #333;
+				color: white;
+				text-decoration: none;
+				font-weight: 500;
+				border-radius: 5px;
+				transition: background-color 0.3s ease;
+				display: none; */
+				/* } */
 			}
 		</style>
 	</head>
@@ -483,55 +504,55 @@
 					<div class="bio-content">
 						<h1>Madison Renee Hammel</h1>
 						<h2>Soprano</h2>
-						<div class="bio-text">
-							<p>
-								Madison Renee Hammel, Soprano, is a 2024 graduate of Oberlin
-								College and Conservatory, earning her Bachelor of Music (Vocal
-								Performance, studying under Professor Kendra Colton) and
-								Bachelor of Arts in Psychology.
-							</p>
-							<p>
-								She performed with the Oberlin Chamber Singers and most recently
-								sang the roles of Eurydice & La Musica in Monteverdi’s
-								<em>L’Orfeo</em> and Ms. Wordsworth in Britten’s
-								<em>Albert Herring</em> with the Oberlin Opera Theater.
-							</p>
-							<p>
-								She currently serves with the ArtistYear program as an
-								AmeriCorps Resident Teaching Fellow at C.C.A. Baldi Middle
-								School, where she supports Theater and Music classes and
-								recently helped mount the school’s first musical production,
-								<em>Moana Jr.</em>
-							</p>
-							<p>
-								Madison has performed in international choral festivals,
-								including Alta Pusteria, Idaho, and Montana International Choral
-								Festivals. She has also sung at Carnegie Hall, Thomaskirche in
-								Leipzig, Tanglewood, the Kimmel Center, and the Academy of Music
-								with the Pennsylvania Ballet.
-							</p>
-							<p>
-								Originally from Haddonfield, NJ, she graduated with honors from
-								Haddonfield Memorial High School. She studied under Ms. Kristine
-								Biller, sang with ChildrenSong of NJ under Ms. Polly Murray, and
-								studied at Manhattan School of Music Pre-College with Ms. Jeanai
-								La Vita.
-							</p>
-							<p>
-								Madison serves as a Cantor for parishes in the greater
-								Philadelphia area, including Christ the King (Haddonfield, NJ),
-								Saint James the Lesser (Jamesburg, NJ), and Queenship of Mary
-								(Plainsboro, NJ). She is also an avid tennis player and
-								dedicated home baker.
-							</p>
-							<!-- <a
+						<div class="bio-text"> 
+						<p>
+							Madison Renee Hammel, Soprano, is a 2024 graduate of Oberlin
+							College and Conservatory, earning her Bachelor of Music (Vocal
+							Performance, studying under Professor Kendra Colton) and Bachelor
+							of Arts in Psychology.
+						</p>
+						<!-- <p>
+							She performed with the Oberlin Chamber Singers and most recently
+							sang the roles of Eurydice & La Musica in Monteverdi’s
+							<em>L’Orfeo</em> and Ms. Wordsworth in Britten’s
+							<em>Albert Herring</em> with the Oberlin Opera Theater.
+						</p>
+						<p>
+							She currently serves with the ArtistYear program as an AmeriCorps
+							Resident Teaching Fellow at C.C.A. Baldi Middle School, where she
+							supports Theater and Music classes and recently helped mount the
+							school’s first musical production,
+							<em>Moana Jr.</em>
+						</p>
+						<p>
+							Madison has performed in international choral festivals, including
+							Alta Pusteria, Idaho, and Montana International Choral Festivals.
+							She has also sung at Carnegie Hall, Thomaskirche in Leipzig,
+							Tanglewood, the Kimmel Center, and the Academy of Music with the
+							Pennsylvania Ballet.
+						</p>
+						<p>
+							Originally from Haddonfield, NJ, she graduated with honors from
+							Haddonfield Memorial High School. She studied under Ms. Kristine
+							Biller, sang with ChildrenSong of NJ under Ms. Polly Murray, and
+							studied at Manhattan School of Music Pre-College with Ms. Jeanai
+							La Vita.
+						</p>
+						<p>
+							Madison serves as a Cantor for parishes in the greater
+							Philadelphia area, including Christ the King (Haddonfield, NJ),
+							Saint James the Lesser (Jamesburg, NJ), and Queenship of Mary
+							(Plainsboro, NJ). She is also an avid tennis player and dedicated
+							home baker.
+						</p> --> 
+						<!-- <a
 								href="/madi-site-press-kit.pdf"
 								download
 								class="download-button"
 							>
 								Download Press Kit
 							</a> -->
-						</div>
+						<!-- </div> -->
 					</div>
 				</div>
 			</section>
