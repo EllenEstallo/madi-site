@@ -14,9 +14,10 @@
 				font-family: "Montserrat", sans-serif;
 				margin: 0;
 				padding: 0;
+				overflow-x: hidden;
 			}
 
-			body.about {
+			body.engagements {
 				overflow-x: hidden;
 				overflow-y: auto;
 				min-height: 100vh;
@@ -117,7 +118,6 @@
 			.hamburger span:nth-child(3) {
 				top: 16px;
 			}
-
 			.hamburger.active span:nth-child(1) {
 				transform: rotate(30deg);
 				top: 8px;
@@ -129,7 +129,6 @@
 				transform: rotate(-30deg);
 				top: 8px;
 			}
-
 			/* ======= MOBILE NAV MENU ======= */
 			.mobile-nav {
 				position: fixed;
@@ -151,23 +150,19 @@
 				pointer-events: none;
 				transition: transform 0.5s ease, opacity 0.5s ease;
 			}
-
 			.mobile-nav.open {
 				transform: translateX(0);
 				opacity: 1;
 				pointer-events: auto;
 			}
-
 			.mobile-nav ul {
 				list-style: none;
 				margin: 0;
 				padding: 0;
 			}
-
 			.mobile-nav li {
 				margin-bottom: 1.5rem;
 			}
-
 			.mobile-nav li a {
 				color: white;
 				text-decoration: none;
@@ -178,7 +173,6 @@
 				display: inline-block;
 				transition: color 0.3s ease;
 			}
-
 			.mobile-nav li a::after {
 				content: "";
 				position: absolute;
@@ -189,22 +183,18 @@
 				background-color: white;
 				transition: width 0.3s ease;
 			}
-
 			.mobile-nav li a:hover::after {
 				width: 100%;
 			}
-
 			.mobile-nav-links {
 				opacity: 0;
 				transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
 			}
-
 			.mobile-nav.open .mobile-nav-links {
 				opacity: 1;
 				transform: translateY(0);
 			}
 			/* ======= BANNER  ======= */
-
 			.banner-wrapper {
 				position: relative;
 				width: 100%;
@@ -216,7 +206,6 @@
 				background-color: black;
 				overflow: hidden;
 			}
-
 			.banner-image {
 				object-fit: contain;
 				width: 100%;
@@ -233,6 +222,17 @@
 				white-space: nowrap;
 			}
 			/* ===== CONTENT CONTAINER =====*/
+
+			/* /* ========== */
+			/* TESTING - BEGIN  */
+			.content-container {
+				/* height: 1500px; */
+				width: 100vw;
+				/* background-color: orchid; */
+			}
+			/* TESTING - END  */
+			/* /* ========== */
+
 			.content-container {
 				display: flex;
 				justify-content: center;
@@ -242,13 +242,18 @@
 			.about-content {
 				width: 100%;
 				max-width: 1050px;
-				padding: 0 1rem;
+				padding: 0;
 				margin-top: 64px;
 				box-sizing: border-box;
-				height: 500px;
 				background-color: white;
 			}
-
+			/* TESTING - BEGIN  */
+			/* .about-content { */
+			/* height: 1400px; */
+			/* background-color: red; */
+			/* } */
+			/* TESTING - END  */
+			/* /* ========== */
 			.about-content h1 {
 				text-align: center;
 				line-height: 1.2;
@@ -260,70 +265,145 @@
 			}
 			.about-layout {
 				display: flex;
+				flex-direction: row;
 				justify-content: center;
-				align-items: flex-start;
-				gap: 2rem;
-				max-width: 1000px;
-				margin: 0 auto;
-			}
-			.headshot-and-presskit,
-			.bio-content {
-				flex: 1;
-				height: 300px;
-				color: white;
-				font-size: 1.5rem;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				border-radius: 8px;
-				padding: 1rem;
-			}
-			.headshot-and-presskit {
-				background-color: red;
-				flex-direction: column;
-				align-items: center;
-				justify-content: flex-start; /* Align content to top */
-				padding: 1rem;
-				height: 300px;
-			}
-			/* .headshot-and-presskit h2 {
-				font-size: 1.5rem;
-				font-weight: bold;
-				color: white;
-				margin-bottom: 1rem;
-				display: none; /* hidden on desktop */
+				width: 1000px;
+				margin: 1rem auto;
 
-			/* .headshot-and-presskit .headshot {
+				padding: 0;
+			}
+			/* TESTING - BEGIN  */
+			.about-layout {
+				width: 1000px;
+				background-color: green;
+			}
+			.poster-and-tickets {
+				width: 390px;
+				height: 900px;
+				background-color: peru;
+
+				padding: 0;
+				margin: 0;
+			}
+			.poster-and-tickets h2 {
+				text-align: center; /* Center text inside h2 */
+				width: 100%; /* Ensure it fills the container */
+				/* margin-top: 1rem;          Add top spacing if needed */
+				/* margin-bottom: 1rem;       Optional: spacing below */
+				display: none;
+			}
+			.poster-and-tickets .poster {
 				width: 100%;
-				max-width: 100%; /* Ensures it stretches fully within container *
-				height: auto;
-				display: block;
-				object-fit: cover;
-				align-self: center;
-				border-radius: 6px;
-				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-			} */
-			.bio-content {
-				background-color: blue;
-				height: 300px;
-				color: white;
-				font-size: 1.5rem;
-				text-align: center;
+				height: auto; /* Maintains the aspect ratio */
+				display: block; /* Removes inline whitespace below image */
+				max-width: 100%; /* Prevents overflow */
 			}
-			/* ======= FOOTER ======= */
-			/* .site-footer {
-					width: 100%;
-					padding: 1rem 1rem;
-					background-color: #000;
-					color: #fff;
-					text-align: center;
-					font-size: 0.875rem;
-					margin-top: 4rem;
-				}
+			.performance-content {
+				background-color: brown;
+				width: 590px;
+				height: 900px;
+				padding: 0;
+				margin: 0;
+			}
+			/* TESTING - END  */
 
-				.footer-content p {
-					margin: 0;
-				} */
+			/* .performance-poster-and-tickets h2 {
+				display: none;
+			} */
+			/* .performance-poster-and-tickets h2,
+			.performance-content h2 {
+				margin: 0;
+				padding: 0;
+				color: black;
+			}
+			.performance-poster-and-tickets h2 {
+				display: none;
+			}
+			.performance-content h2 {
+				display: block;
+			}
+			.performance-poster-and-tickets .poster {
+				width: 100%;
+				/* max-width: 500px; *
+				height: auto;
+			}
+			.performance-poster-and-tickets .performance-info,
+			.performance-content .performance-info {
+				text-align: center;
+				margin-top: 1.5rem;
+				color: black;
+				padding: 0 1rem;
+				display: block;
+				font-size: 1rem;
+				line-height: 1.5;
+			}
+			.performance-content p {
+				margin: 0;
+				padding: 0;
+				font-size: 1.125rem;
+				line-height: 1.6;
+			} */
+
+			/* @media (max-width: 768px) { */
+			/* .mobile-divider {
+					display: block;
+				}
+			} */
+
+			/* .performance-content .performance-info {
+				display: none;
+			}
+			.mobile-divider {
+				display: none;
+				border: none;
+				border-top: 1px solid #ccc;
+				margin: 2rem auto 1rem;
+				width: 60%;
+			}
+			.performance-info {
+				text-align: center;
+				margin-top: 1.5rem;
+				color: black;
+				padding: 0 1rem;
+				display: block;
+				font-size: 1rem;
+				line-height: 1.5;
+			}
+
+			.ticket-button {
+				display: inline-block;
+				margin-top: 1rem;
+				padding-top: 0.4rem;
+				padding-bottom: 0.6rem;
+				padding-right: 1.2rem;
+				padding-left: 1.2rem;
+				background-color: #b30000;
+				color: white;
+				text-decoration: none;
+				font-weight: bold;
+				border-radius: 6px;
+				transition: background-color 0.3s ease;
+				font-size: 1rem;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+			}
+			.ticket-button:hover {
+				background-color: #8a0000;
+			} */
+
+			/* ======= FOOTER ======= */
+			.site-footer {
+				width: 100%;
+				padding: 1rem 1rem;
+				background-color: #000;
+				color: #fff;
+				text-align: center;
+				font-size: 0.875rem;
+				margin-top: 4rem;
+			}
+
+			.footer-content p {
+				margin: 0;
+			}
 
 			/* MEDIA QUERIES (MOBILE) */
 			@media (max-width: 768px) {
@@ -333,7 +413,6 @@
 				.banner-wrapper {
 					align-items: flex-start;
 				}
-
 				.banner-image {
 					align-self: flex-start;
 					object-fit: cover;
@@ -347,27 +426,93 @@
 					margin-top: -60px;
 					z-index: 1;
 				}
-				/* .about-layout {
+				.about-layout {
 					flex-direction: column;
-					align-items: center;
-				} */
-
-				.headshot-and-presskit,
-				.bio-content {
-					width: 100%;
-					height: 200px;
-					max-width: 400px;
-					text-align: center;
+					align-items: center; /* horizontally center children */
+					width: 100%; /* allow full width */
+					max-width: 100%; /* prevent horizontal scroll */
+					padding: 0;
+					margin: 0 auto;
 				}
-				/* .headshot-and-presskit {
-					height: auto;
-				} */
-
-				/* .headshot-and-presskit h2 {
+				.poster-and-tickets,
+				.performance-content {
+					width: 100%;
+					max-width: 100%;
+					height: auto; /* Let content control height */
+					padding: 0;
+					margin: 0;
+				}
+				.poster-and-tickets h2 {
 					display: block;
-					margin-top: -2rem;
-				} */
+					margin-top: 0rem;
+				}
+				.poster-and-tickets .poster {
+					margin-left: 0;
+					margin-right: 0;
+				}
+
+				/* justify-content: center;
+				width: 1000px;
+				margin: 0 auto;
+				padding: 0; */
 			}
+
+			/* .poster-and-tickets,
+				.performance-content {
+					width: 100%;
+					max-width: 100%; /* removes any previously set fixed max-width *
+					height: auto; /* optional: let content dictate height *
+				} 
+				.poster-and-tickets h2 {
+					text-align: center;
+					width: 100%;
+					margin: 0 auto;
+				}
+			}
+
+			/* .performance-poster-and-tickets,
+			.performance-content {
+				width: 100%;
+				height: 500px;
+				max-width: 400px;
+				text-align: center;
+				flex: unset;
+			}
+			.performance-poster-and-tickets h2 {
+				display: block;
+				margin-top: -2rem;
+				margin-bottom: 1rem;
+			}
+			.performance-poster-and-tickets .performance-info {
+				display: none;
+			}
+			.performance-content {
+				z-index: 1;
+				margin-top: 2rem;
+				margin-left: 0;
+				margin-right: 0;
+				padding-left: 0;
+				padding-right: 0;
+				text-align: left;
+			}
+
+			.performance-content h2 {
+				display: none;
+			}
+			.mobile-divider {
+				display: block;
+			}
+
+			.performance-content .performance-info {
+				display: block;
+				text-align: center;
+				padding: 0 1rem;
+				font-size: 1rem;
+				line-height: 1.5;
+				margin-top: 1.5rem;
+				font-size: 0.9rem;
+				line-height: 1.4;
+			} */
 		</style>
 	</head>
 
@@ -421,68 +566,96 @@
 
 		<div class="content-container">
 			<section class="about-content">
-				<h1>Forthcoming</h1>
+				<h1>Upcoming</h1>
 				<div class="about-layout">
-					<div class="headshot-and-presskit">
-						<!-- <h2>Dido and Aeneas</h2> -->
-						<!--  
+					<div class="poster-and-tickets">
+						<h2>Dido and Aeneas</h2>
 						<img
 							src="./Assets/dido-and-aeneas.jpg"
 							alt="Dido and Aeneas Poster"
-							class="headshot"
-						 /> -->
+							class="poster"
+						/>
 					</div>
+					<div class="performance-content">BOTTOM BOX</div>
+					<!-- <img
+							src="./Assets/dido-and-aeneas.jpg"
+							alt="Dido and Aeneas Poster"
+							class="poster"
+						/>
+						<!- Performance Info --
+						<div class="performance-info">
+							<p>
+								Friday, August 22 at 7 PM, & <br />Sunday, August 24 at 3 PM
+								<br /><br />
 
-					<div class="bio-content"></div>
+								First Presbyterian Church in Germantown <br />
+								35 W. Chelten Avenue, Philadelphia 19144.<br />
+							</p>
+
+							<a
+								href="https://www.ticketleap.events/tickets/dvopera/dido-amp-aeneas"
+								target="_blank"
+								class="ticket-button"
+							>
+								🎟️ Buy Tickets
+							</a>
+						</div> -->
+					<!-- </div> -->
+
+					<!-- <div class="performance-content"> -->
+					<!-- BOX 2 -->
+					<!-- <h2>Dido and Aeneas</h2>
+						<br />
+						<p>
+							Madison Hammel as the Second Woman in Dido and Aeneas <br /><br />
+							Hammel joins the cast of Henry Purcell’s Dido and Aeneas as the
+							Second Woman, bringing warmth, clarity, and vibrant musicality to
+							this beloved Baroque masterpiece. <br /><br />As part of the
+							Delaware Valley Opera Company's 2025–2026 season, Madison’s
+							portrayal adds depth and nuance to the courtly world that
+							surrounds Dido’s tragic journey. Her performance is distinguished
+							by a lyrical soprano tone, graceful phrasing, and a keen
+							sensitivity to ensemble collaboration—hallmarks of her emerging
+							artistry. <br /><br />This new production of Dido and Aeneas
+							offers a fresh and emotionally resonant take on a timeless story
+							of love and betrayal, drawn from Virgil’s Aeneid. Under the
+							direction of acclaimed early music specialist John Walthausen, the
+							cast and Baroque chamber ensemble bring Purcell’s 17th-century
+							score vividly to life—reaching across centuries with immediacy and
+							power. <br /><br />Audiences are invited into a stirring retelling
+							of Purcell’s operatic gem, where Madison Hammel’s voice and
+							presence help illuminate the emotional core of Dido’s world.
+						</p>
+						<hr class="mobile-divider" />
+						<div class="performance-info">
+							<p>PERFORMANCE INFORMATION</p>
+							<p>
+								Friday, August 22 at 7 PM, & <br />Sunday, August 24 at 3 PM
+								<br /><br />
+
+								First Presbyterian Church, Germantown <br />
+								35 W. Chelten Avenue, Philadelphia 19144.<br />
+							</p>
+
+							<a
+								href="https://www.ticketleap.events/tickets/dvopera/dido-amp-aeneas"
+								target="_blank"
+								class="ticket-button"
+							>
+								🎟️ Buy Tickets
+							</a>
+						</div>  -->
+					<!-- </div> -->
 				</div>
-
-				<!-- <a href="/madi-site-press-kit.pdf" download class="download-button">Download Press Kit
-						</a>
-					</div> -->
-
-				<!-- Details and Ticket Link -->
-				<!-- <div class="bio-content">
-						<div class="bio-text">
-							<h2 style="text-align: center; font-weight: 600">
-								Dido and Aeneas
-							</h2>
-							<p style="text-align: center">
-								<strong>Madison Hammel as the Second Woman</strong>
-							</p>
-							<p style="text-align: center">
-								Presented by Delaware Valley Opera Company<br />
-								Part of the 2025–2026 Season
-							</p>
-							<p style="text-align: center">
-								📍 The First Presbyterian Church Germantown<br />
-								35 W. Chelten Avenue, Philadelphia, PA 19144
-							</p>
-							<p style="text-align: center">
-								🗓️ <strong>Friday, August 22 at 7:00 PM</strong><br />
-								🗓️ <strong>Sunday, August 24 at 3:00 PM</strong>
-							</p>
-							<br />
-							<div style="text-align: center">
-								<a
-									href="https://www.ticketleap.events/tickets/dvopera/dido-amp-aeneas"
-									target="_blank"
-									class="download-button"
-									style="background-color: #b30000"
-								>
-									🎟️ Buy Tickets
-								</a>
-							</div>
-						</div>
-					</div> -->
 			</section>
 		</div>
 
 		<!-- ======= FOOTER ======= -->
-		<!-- <footer class="site-footer">
+		<footer class="site-footer">
 			<div class="footer-content">
 				<p>&copy; 2025 Madison Renee Hammel. All rights reserved.</p>
 			</div>
-		</footer> -->
+		</footer>
 
 		<!--  ======= JS TOGGLE FOR MOBILE NAV ======= -->
 		<script>
