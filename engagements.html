@@ -223,17 +223,8 @@
 			}
 			/* ===== CONTENT CONTAINER =====*/
 
-			/* /* ========== */
-			/* TESTING - BEGIN  */
 			.content-container {
-				/* height: 1500px; */
 				width: 100vw;
-				/* background-color: orchid; */
-			}
-			/* TESTING - END  */
-			/* /* ========== */
-
-			.content-container {
 				display: flex;
 				justify-content: center;
 				align-items: flex-start;
@@ -247,13 +238,7 @@
 				box-sizing: border-box;
 				background-color: white;
 			}
-			/* TESTING - BEGIN  */
-			/* .about-content { */
-			/* height: 1400px; */
-			/* background-color: red; */
-			/* } */
-			/* TESTING - END  */
-			/* /* ========== */
+
 			.about-content h1 {
 				text-align: center;
 				line-height: 1.2;
@@ -261,7 +246,7 @@
 				font-size: clamp(2rem, 5vw, 3.5rem);
 				font-weight: 600;
 				letter-spacing: 0.5px;
-				color: #111;
+				color: black;
 			}
 			.about-layout {
 				display: flex;
@@ -269,28 +254,17 @@
 				justify-content: center;
 				width: 1000px;
 				margin: 2rem auto;
-
 				padding: 0;
-			}
-			/* TESTING - BEGIN  */
-			.about-layout {
-				width: 1000px;
-				/* background-color: green; */
 			}
 			.poster-and-tickets {
 				width: 400px;
-				/* height: 900px; */
-				/* background-color: peru; */
-
 				padding: 0;
 				margin: 0;
 			}
 			.poster-and-tickets h2,
 			.performance-content h2 {
-				text-align: center; /* Center text inside h2 */
-				width: 100%; /* Ensure it fills the container */
-				/* margin-top: 1rem;          Add top spacing if needed */
-				/* margin-bottom: 1rem;       Optional: spacing below */
+				text-align: center;
+				width: 100%;
 				display: none;
 			}
 			.performance-content h2 {
@@ -305,20 +279,17 @@
 				margin-left: auto;
 				margin-right: auto;
 				padding: 0 1rem;
-				/* optional: adds space inside the image box */
-				box-sizing: border-box; /* ensures padding doesn't overflow */
+				box-sizing: border-box;
 			}
-			.poster-and-tickets .performance-info {
-				/* height: 50px; */
-				/* background-color: cornflowerblue; */
-
-				text-align: center;
-				font-size: 1rem; /* Adjust for readability */
-				line-height: 1.6; /* Comfortable vertical spacing */
-				color: #333; /* Dark gray text for legibility */
+			.performance-info {
+				text-align: left;
+				font-size: 1rem;
+				line-height: 1.6;
+				color: black;
 				margin-top: 2rem;
 				padding: 1rem;
-				background-color: #f9f9f9; /* Light background to separate it */
+				background-color: #f9f9f9;
+				/* Light background  */
 				border-radius: 8px;
 				box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 				max-width: 600px;
@@ -327,56 +298,23 @@
 			}
 
 			.performance-content {
-				/* background-color: brown; */
 				width: 600px;
-				height: 900px;
-				padding-left: 1rem;
+				padding-left: 1.5rem;
 				margin: 0;
 			}
 			.performance-content h2 {
 				display: block;
-			}
-			/* TESTING - END  */
-
-			/* 
-			.performance-content h2 {
-				display: block;
-			}
-			
 			}
 			.performance-content p {
-				margin: 0;
-				padding: 0;
+				margin-top: 0;
+				padding-top: 0;
 				font-size: 1.125rem;
 				line-height: 1.6;
-			} */
-
-			/* @media (max-width: 768px) { */
-			/* .mobile-divider {
-					display: block;
-				}
-			} */
-
-			/* .performance-content .performance-info {
+			}
+			.performance-content .performance-info {
 				display: none;
 			}
-			.mobile-divider {
-				display: none;
-				border: none;
-				border-top: 1px solid #ccc;
-				margin: 2rem auto 1rem;
-				width: 60%;
-			}
-			.performance-info {
-				text-align: center;
-				margin-top: 1.5rem;
-				color: black;
-				padding: 0 1rem;
-				display: block;
-				font-size: 1rem;
-				line-height: 1.5;
-			}
-/*  */
+
 			.ticket-button {
 				display: inline-block;
 				margin-top: 1rem;
@@ -401,7 +339,7 @@
 			.site-footer {
 				width: 100%;
 				padding: 1rem 1rem;
-				background-color: #000;
+				background-color: black;
 				color: #fff;
 				text-align: center;
 				font-size: 0.875rem;
@@ -445,7 +383,7 @@
 				.performance-content {
 					width: 100%;
 					max-width: 100%;
-					height: auto; /* Let content control height */
+					height: auto;
 					padding: 0;
 					margin: 0 auto;
 				}
@@ -460,43 +398,20 @@
 					display: none;
 				}
 
-				/* justify-content: center;
-				width: 1000px;
-				margin: 0 auto;
-				padding: 0; */
+				.performance-content {
+					padding-left: 1.5rem;
+					padding-right: 1.5rem;
+					box-sizing: border-box;
+				}
+				.performance-content p {
+					font-size: 1rem;
+				}
+				.performance-content .performance-info {
+					display: block;
+					text-align: center;
+					background-color: #d6c8b6;
+				}
 			}
-
-			/* 
-			.performance-poster-and-tickets .performance-info {
-				display: none;
-			}
-			.performance-content {
-				z-index: 1;
-				margin-top: 2rem;
-				margin-left: 0;
-				margin-right: 0;
-				padding-left: 0;
-				padding-right: 0;
-				text-align: left;
-			}
-
-			.performance-content h2 {
-				display: none;
-			}
-			.mobile-divider {
-				display: block;
-			}
-
-			.performance-content .performance-info {
-				display: block;
-				text-align: center;
-				padding: 0 1rem;
-				font-size: 1rem;
-				line-height: 1.5;
-				margin-top: 1.5rem;
-				font-size: 0.9rem;
-				line-height: 1.4;
-			} */
 		</style>
 	</head>
 
@@ -577,39 +492,31 @@
 						</div>
 					</div>
 					<div class="performance-content">
-						<h2>Dido and Aeneas</h2>
-						<p>Madison Hammel as the Second Woman in Dido and Aeneas</p>
-					</div>
-					<!-- 
-					 </div> -->
-
-					<!-- <div class="performance-content"> -->
-
-					<!-- <h2>Dido and Aeneas</h2>
 						<br />
-						<p>
-							Madison Hammel as the Second Woman in Dido and Aeneas <br /><br />
+						<h2>Dido and Aeneas</h2>
+						<br /><br />
+						<p style="font-weight: bold">
+							Madison Hammel as the Second Woman in <em>Dido and Aeneas</em
+							><br /><br />
 							Hammel joins the cast of Henry Purcell’s Dido and Aeneas as the
 							Second Woman, bringing warmth, clarity, and vibrant musicality to
-							this beloved Baroque masterpiece. <br /><br />As part of the
-							Delaware Valley Opera Company's 2025–2026 season, Madison’s
-							portrayal adds depth and nuance to the courtly world that
-							surrounds Dido’s tragic journey. Her performance is distinguished
-							by a lyrical soprano tone, graceful phrasing, and a keen
-							sensitivity to ensemble collaboration—hallmarks of her emerging
-							artistry. <br /><br />This new production of Dido and Aeneas
-							offers a fresh and emotionally resonant take on a timeless story
-							of love and betrayal, drawn from Virgil’s Aeneid. Under the
-							direction of acclaimed early music specialist John Walthausen, the
-							cast and Baroque chamber ensemble bring Purcell’s 17th-century
-							score vividly to life—reaching across centuries with immediacy and
-							power. <br /><br />Audiences are invited into a stirring retelling
-							of Purcell’s operatic gem, where Madison Hammel’s voice and
-							presence help illuminate the emotional core of Dido’s world.
+							this cherished Baroque gem. <br /><br />As part of the Delaware
+							Valley Opera Company’s 2025–2026 season, Madison’s portrayal
+							brings depth and subtlety to the courtly world surrounding Dido’s
+							tragic fate. Her interpretation is marked by a lyrical soprano
+							tone, elegant phrasing, and a deep sensitivity to ensemble
+							work—hallmarks of her emerging artistry. <br /><br />This new
+							staging of Dido and Aeneas offers a poignant and contemporary
+							perspective on a timeless tale of love and betrayal, drawn from
+							Virgil’s Aeneid. Under the direction of acclaimed early music
+							specialist John Walthausen, the cast and Baroque chamber ensemble
+							breathe new life into Purcell’s 17th-century score—delivering
+							music that resonates with immediacy and emotional power.
+							<br /><br />Audiences are invited into an intimate retelling of
+							Purcell’s masterwork, where Madison Hammel’s voice helps shape the
+							emotional heart of Dido’s world.
 						</p>
-						<hr class="mobile-divider" />
 						<div class="performance-info">
-							<p>PERFORMANCE INFORMATION</p>
 							<p>
 								Friday, August 22 at 7 PM, & <br />Sunday, August 24 at 3 PM
 								<br /><br />
@@ -617,7 +524,6 @@
 								First Presbyterian Church, Germantown <br />
 								35 W. Chelten Avenue, Philadelphia 19144.<br />
 							</p>
-
 							<a
 								href="https://www.ticketleap.events/tickets/dvopera/dido-amp-aeneas"
 								target="_blank"
@@ -625,8 +531,8 @@
 							>
 								🎟️ Buy Tickets
 							</a>
-						</div>  -->
-					<!-- </div> -->
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
