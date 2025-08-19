@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Hero Debug</title>
+		<style>
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+				background: #000;
+				color: #fff;
+				font-family: system-ui, sans-serif;
+			}
+			.home-hero {
+				/* TEST A: CSS background */
+				min-height: 60vh;
+				background: url("Assets/Madi-cover.jpg") center / cover no-repeat;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				outline: 3px dashed #0ff; /* see the box */
+				margin-top: 70px; /* clear fixed navs if any */
+			}
+			.result {
+				font-size: 1rem;
+				background: rgba(0, 0, 0, 0.6);
+				padding: 0.5rem 0.75rem;
+				border-radius: 6px;
+			}
+			.stack {
+				display: grid;
+				gap: 24px;
+				padding: 16px;
+			}
+			.spacer {
+				height: 24px;
+			}
+			.pass {
+				color: #0f0;
+			}
+			.fail {
+				color: #f66;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="stack">
+			<h1>Hero Background Debug</h1>
+
+			<!-- A) CSS background -->
+			<div id="hero" class="home-hero">
+				<div class="result">
+					A) CSS background on this box. If you see a photo here, CSS path works
+					✅
+				</div>
+			</div>
+
+			<div class="spacer"></div>
+
+			<!-- B) Direct <img> check -->
+			<div>
+				<div class="result">
+					B) Direct &lt;img&gt; using the same path below. If you see the image,
+					the path is correct ✅
+				</div>
+				<img
+					id="probeImg"
+					src="Assets/Madi-cover.jpg"
+					alt="probe"
+					style="
+						max-width: 420px;
+						display: block;
+						margin-top: 8px;
+						border: 2px solid #fff;
+					"
+				/>
+			</div>
+
+			<div class="spacer"></div>
+
+			<!-- C) Inline style background (bypasses CSS rule order) -->
+			<div
+				id="inlineHero"
+				style="
+					min-height: 40vh;
+					background: url('Assets/Madi-cover.jpg') center/cover no-repeat;
+					outline: 3px dashed #ff0;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				"
+			>
+				<div class="result">
+					C) Inline background. If this shows but A does not, a CSS rule is
+					overriding A ✅
+				</div>
+			</div>
+
+			<div class="spacer"></div>
+
+			<div id="notes" class="result">Status: running tests…</div>
+		</div>
+
+		<script>
+			// Simple load/error checks
+			const notes = document.getElementById("notes");
+			const probeImg = document.getElementById("probeImg");
+
+			function log(line, ok) {
+				const span = document.createElement("div");
+				span.innerHTML = (ok ? "✅ " : "❌ ") + line;
+				span.className = ok ? "pass" : "fail";
+				notes.appendChild(span);
+			}
+
+			probeImg.addEventListener("load", () =>
+				log("B) <img> loaded the file: path & filename are correct.", true)
+			);
+			probeImg.addEventListener("error", () =>
+				log("B) <img> failed to load. Path or filename/case is wrong.", false)
+			);
+
+			// Also show quick advice about case sensitivity & paths
+			log(
+				'Tip: Folder must be exactly "Assets" and file exactly "Madi-cover.jpg" (case-sensitive on servers).',
+				true
+			);
+		</script>
+	</body>
+</html>

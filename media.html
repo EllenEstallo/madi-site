@@ -279,13 +279,35 @@
 				}
 			}
 
-			.photo-grid {
+			/* .photo-grid {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 				gap: 1rem;
 				padding: 2rem;
 				max-width: 1200px;
 				margin: 0 auto;
+			} */
+
+			.photo-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr); /* exactly 3 per row */
+				gap: 1rem;
+				padding: 2rem;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			/* Optional: make it 2 per row on tablets, 1 per row on phones */
+			@media (max-width: 900px) {
+				.photo-grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
+
+			@media (max-width: 560px) {
+				.photo-grid {
+					grid-template-columns: 1fr;
+				}
 			}
 
 			.photo-grid img {
@@ -300,6 +322,71 @@
 			.photo-grid img:hover {
 				transform: scale(1.03);
 			}
+			/* ===== Built-in Lightbox */
+			/* Clickable thumbnails */
+			.photo-grid img {
+				cursor: zoom-in;
+			}
+
+			/* Lightbox */
+			.lightbox-overlay {
+				position: fixed;
+				inset: 0;
+				background: rgba(0, 0, 0, 0.9);
+				display: none;
+				align-items: center;
+				justify-content: center;
+				padding: 2rem;
+				z-index: 3000;
+			}
+			.lightbox-overlay.open {
+				display: flex;
+			}
+
+			.lightbox-img {
+				max-width: 90vw;
+				max-height: 85vh;
+				border-radius: 10px;
+				box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+			}
+
+			/* Controls */
+			.lightbox-close,
+			.lightbox-prev,
+			.lightbox-next {
+				position: absolute;
+				background: rgba(255, 255, 255, 0.15);
+				border: 1px solid rgba(255, 255, 255, 0.3);
+				color: #fff;
+				font-size: 1rem;
+				padding: 0.6rem 0.9rem;
+				border-radius: 999px;
+				cursor: pointer;
+				backdrop-filter: blur(4px);
+			}
+			.lightbox-close {
+				top: 16px;
+				right: 16px;
+			}
+			.lightbox-prev,
+			.lightbox-next {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.lightbox-prev {
+				left: 16px;
+			}
+			.lightbox-next {
+				right: 16px;
+			}
+
+			.lightbox-close:hover,
+			.lightbox-prev:hover,
+			.lightbox-next:hover {
+				background: rgba(255, 255, 255, 0.25);
+			}
+
+			/*  */
 
 			/* ======= FOOTER ======= */
 			.site-footer {
@@ -535,22 +622,95 @@
 				<br />
 				<h1>PHOTOS</h1>
 				<br />
+				<!-- <div class="photo-grid">
+					<img src="/Assets/photos/Madi-004.jpg" alt="Performance Photo 1" />
+					
+
+					<img src="./Assets/photos/Madi-037.jpg" alt="Performance Photo 2" />
+					<img src="./Assets/photos/Madi-045.jpg" alt="Performance Photo 3" />
+					<img src="./Assets/photos/Madi-053.jpg" alt="Performance Photo 4" />
+					
+					<img src="./Assets/photos/Madi-085.jpg" alt="Performance Photo 7" />
+					<img src="./Assets/photos/Madi-091.jpg" alt="Performance Photo 8" />
+					<img src="./Assets/photos/Madi-096.jpg" alt="Performance Photo 9" />
+					<img src="./Assets/photos/Madi-111.jpg" alt="Performance Photo 10" />
+					<img src="./Assets/photos/Madi-128.jpg" alt="Performance Photo 11" />
+					
+					<img src="./Assets/photos/Madi-076.jpg" alt="Performance Photo 6" />
+				</div> -->
 				<div class="photo-grid">
-					<img src="./Assets/photos/photo1.jpg" alt="Performance Photo 1" />
-					<img src="./Assets/photos/photo2.jpg" alt="Performance Photo 2" />
-					<img src="./Assets/photos/photo3.jpg" alt="Performance Photo 3" />
-					<img src="./Assets/photos/photo4.jpg" alt="Performance Photo 4" />
-					<img src="./Assets/photos/photo5.jpg" alt="Performance Photo 5" />
-					<img src="./Assets/photos/photo6.jpg" alt="Performance Photo 6" />
-					<img src="./Assets/photos/photo7.jpg" alt="Performance Photo 7" />
-					<img src="./Assets/photos/photo8.jpg" alt="Performance Photo 8" />
-					<img src="./Assets/photos/photo9.jpg" alt="Performance Photo 9" />
-					<img src="./Assets/photos/photo10.jpg" alt="Performance Photo 10" />
-					<img src="./Assets/photos/photo11.jpg" alt="Performance Photo 11" />
-					<img src="./Assets/photos/photo12.jpg" alt="Performance Photo 12" />
+					<img
+						src="/Assets/photos/Madi-004.jpg"
+						data-full="/Assets/photos/Madi-004.jpg"
+						alt="Performance Photo 1"
+					/>
+					<img
+						src="/Assets/photos/Madi-037.jpg"
+						data-full="/Assets/photos/Madi-037.jpg"
+						alt="Performance Photo 2"
+					/>
+					<img
+						src="/Assets/photos/Madi-045.jpg"
+						data-full="/Assets/photos/Madi-045.jpg"
+						alt="Performance Photo 3"
+					/>
+					<img
+						src="/Assets/photos/Madi-053.jpg"
+						data-full="/Assets/photos/Madi-053.jpg"
+						alt="Performance Photo 4"
+					/>
+					<img
+						src="/Assets/photos/Madi-085.jpg"
+						data-full="/Assets/photos/Madi-085.jpg"
+						alt="Performance Photo 5"
+					/>
+					<img
+						src="/Assets/photos/Madi-091.jpg"
+						data-full="/Assets/photos/Madi-091.jpg"
+						alt="Performance Photo 6"
+					/>
+					<img
+						src="/Assets/photos/Madi-096.jpg"
+						data-full="/Assets/photos/Madi-096.jpg"
+						alt="Performance Photo 7"
+					/>
+					<img
+						src="/Assets/photos/Madi-111.jpg"
+						data-full="/Assets/photos/Madi-111.jpg"
+						alt="Performance Photo 8"
+					/>
+					<img
+						src="/Assets/photos/Madi-128.jpg"
+						data-full="/Assets/photos/Madi-128.jpg"
+						alt="Performance Photo 9"
+					/>
+					<img
+						src="/Assets/photos/Madi-076.jpg"
+						data-full="/Assets/photos/Madi-076.jpg"
+						alt="Performance Photo 10"
+					/>
 				</div>
 			</section>
 		</div>
+		<!-- ======= BUILT-IN LIGHT BOX ======== -->
+		<div class="lightbox-overlay" id="lightbox">
+			<button
+				class="lightbox-close"
+				aria-label="Close (Esc)"
+				id="lightboxClose"
+			>
+				✕
+			</button>
+			<button class="lightbox-prev" aria-label="Previous (←)" id="lightboxPrev">
+				←
+			</button>
+			<img class="lightbox-img" id="lightboxImg" alt="Expanded photo" />
+			<button class="lightbox-next" aria-label="Next (→)" id="lightboxNext">
+				→
+			</button>
+		</div>
+
+		<!--  -->
 		<!-- ======= FOOTER ======= -->
 		<footer class="site-footer">
 			<div class="footer-content">
@@ -560,6 +720,64 @@
 
 		<!--  ======= JS TOGGLE FOR MOBILE NAV ======= -->
 		<script>
+			// <script> for lightbox
+			(function () {
+				const thumbs = Array.from(document.querySelectorAll(".photo-grid img"));
+				const overlay = document.getElementById("lightbox");
+				const imgEl = document.getElementById("lightboxImg");
+				const btnClose = document.getElementById("lightboxClose");
+				const btnPrev = document.getElementById("lightboxPrev");
+				const btnNext = document.getElementById("lightboxNext");
+				let idx = 0;
+
+				// Open lightbox
+				function openLightbox(i) {
+					idx = i;
+					const full = thumbs[idx].dataset.full || thumbs[idx].src;
+					imgEl.src = full;
+					overlay.classList.add("open");
+					document.body.style.overflow = "hidden";
+				}
+
+				// Close lightbox
+				function closeLightbox() {
+					overlay.classList.remove("open");
+					document.body.style.overflow = "";
+					imgEl.src = "";
+				}
+
+				// Navigate
+				function show(delta) {
+					idx = (idx + delta + thumbs.length) % thumbs.length;
+					const full = thumbs[idx].dataset.full || thumbs[idx].src;
+					imgEl.src = full;
+				}
+
+				// Click handlers for thumbnails
+				thumbs.forEach((t, i) => {
+					t.addEventListener("click", () => openLightbox(i));
+				});
+
+				// Controls
+				btnClose.addEventListener("click", closeLightbox);
+				btnPrev.addEventListener("click", () => show(-1));
+				btnNext.addEventListener("click", () => show(1));
+
+				// Close by clicking backdrop (but not the image)
+				overlay.addEventListener("click", (e) => {
+					if (e.target === overlay) closeLightbox();
+				});
+
+				// Keyboard: Esc, ←, →
+				window.addEventListener("keydown", (e) => {
+					if (!overlay.classList.contains("open")) return;
+					if (e.key === "Escape") closeLightbox();
+					if (e.key === "ArrowLeft") show(-1);
+					if (e.key === "ArrowRight") show(1);
+				});
+			})();
+			//
+
 			function toggleMobileNav() {
 				const hamburger = document.getElementById("hamburger");
 				const mobileNav = document.getElementById("mobileNav");
